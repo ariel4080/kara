@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kara/features/l10n/generated/app_localizations.dart';
+import 'core/theme/kara_theme.dart';
 import 'navigation/app_navigation.dart';
 
 void main() {
@@ -16,6 +17,7 @@ class KaraApp extends StatelessWidget {
       routerConfig: AppNavigation.appRouter,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
+      theme: KaraTheme.theme,
     );
   }
 }
