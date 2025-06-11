@@ -33,7 +33,14 @@ dev_dependencies:
   retrofit_generator: ^8.1.0
   riverpod_test: ^0.1.4
   test: any
+  flutter_launcher_icons: ^0.13.1
 
 flutter:
   generate: true
   uses-material-design: true
+
+flutter_launcher_icons:
+  image_path: "assets/icons/kara_launcher.png"
+  adaptive_icon_background: "0xFF420296"
+  ios: true
+  android: true
