@@ -16,7 +16,7 @@ class _SplashScreen extends State<SplashView> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 3), () {
       // Navigate to the next screen after the delay
       if(context.mounted) {
         context.go(AppNavigation.login); 
