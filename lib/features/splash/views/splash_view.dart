@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../navigation/app_navigation.dart';
+import '../../l10n/generated/app_localizations.dart';
+
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
 
@@ -16,19 +19,20 @@ class _SplashScreen extends State<SplashView> {
     Future.delayed(const Duration(seconds: 4), () {
       // Navigate to the next screen after the delay
       if(context.mounted) {
-        context.go('/login'); 
+        context.go(AppNavigation.login); 
       }
     });
   }
 
   @override
   Widget build(content){
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 66, 2, 150),
+    AppLocalizations localizations = AppLocalizations.of(context)!;
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 66, 2, 150),
       body: Center(
         child: Text(
-          'Kara',
-          style: TextStyle(
+          localizations.appTitle,
+          style: const TextStyle(
             fontSize: 55,
             color: Colors.white,
             fontWeight: FontWeight.bold,

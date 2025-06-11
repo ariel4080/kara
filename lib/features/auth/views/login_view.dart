@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kara/features/l10n/generated/app_localizations.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -12,17 +13,18 @@ class _LoginViewState extends State<LoginView> {
 
   @override
   Widget build(BuildContext context) {
+    AppLocalizations? localizations = AppLocalizations.of(context);
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Stack(
           children: [
-            const Positioned(
+            Positioned(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  'Kara',
-                  style: TextStyle(
+                  localizations!.appTitle,
+                  style: const TextStyle(
                     fontSize: 32,
                     color: Color.fromARGB(255, 66, 2, 150),
                     fontWeight: FontWeight.bold,
@@ -47,22 +49,22 @@ class _LoginViewState extends State<LoginView> {
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            const Align(
+                            Align(
                               alignment: Alignment.centerLeft,
                               child: Text(
-                                'Login',
-                                style: TextStyle(
+                                localizations.title_login,
+                                style: const TextStyle(
                                   fontSize: 32,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 16),
-                            const TextField(
+                            TextField(
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
-                                labelText: 'Email',
-                                border: OutlineInputBorder(),
+                                labelText: localizations.label_email,
+                                border: const OutlineInputBorder(),
                               ),
                             ),
                             const SizedBox(height: 16),
@@ -70,7 +72,7 @@ class _LoginViewState extends State<LoginView> {
                               obscureText: !_isPasswordVisible,
                               keyboardType: TextInputType.visiblePassword,
                               decoration: InputDecoration(
-                                labelText: 'Password',
+                                labelText: localizations.label_password,
                                 border: const OutlineInputBorder(),
                                 suffixIcon: IconButton(
                                   onPressed: () {
@@ -92,9 +94,9 @@ class _LoginViewState extends State<LoginView> {
                                 onPressed: () {
                                   // Implement forgot password functionality here
                                 },
-                                child: const Text(
-                                  'Forgot Password?',
-                                  style: TextStyle(
+                                child: Text(
+                                  localizations.label_forgot_password,
+                                  style: const TextStyle(
                                     color: Color.fromARGB(255, 66, 2, 150),
                                   ),
                                 ),
@@ -117,7 +119,7 @@ class _LoginViewState extends State<LoginView> {
                                 onPressed: () {
                                   // Implement login functionality here
                                 },
-                                child: const Text('Login'),
+                                child: Text(localizations.title_login),
                               ),
                             ),
                             const SizedBox(height: 16),
@@ -167,7 +169,7 @@ class _LoginViewState extends State<LoginView> {
                                   // Implement Google login functionality here
                                 },
                                 icon: const Icon(Icons.g_mobiledata),
-                                label: const Text('Login with Google'),
+                                label: Text(localizations.label_login_with_google),
                               ),
                             ),
                           ],
@@ -185,17 +187,17 @@ class _LoginViewState extends State<LoginView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'New to Kara? ',
-                    style: TextStyle(color: Colors.grey),
+                  Text(
+                    localizations.label_new_user,
+                    style: const TextStyle(color: Colors.grey),
                   ),
                   TextButton(
                     onPressed: () {
                       // Implement navigation to sign up view here
                     },
-                    child: const Text(
-                      'Join Now',
-                      style: TextStyle(color: Color.fromARGB(255, 66, 2, 150)),
+                    child: Text(
+                      localizations.label_create_account,
+                      style: const TextStyle(color: Color.fromARGB(255, 66, 2, 150)),
                     ),
                   ),
                 ],

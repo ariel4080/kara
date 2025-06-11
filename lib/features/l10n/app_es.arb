@@ -1,0 +1,11 @@
+{
+    "@@locale": "es",
+    "appTitle": "Kara",
+    "title_login": "Iniciar sesión",
+    "label_email": "Correo electrónico",
+    "label_password": "Contraseña",
+    "label_forgot_password": "¿Olvidaste tu contraseña?",
+    "label_login_with_google": "Iniciar sesión con Google",
+    "label_new_user": "¿Eres nuevo?",
+    "label_create_account": "Crear una cuenta"
+}

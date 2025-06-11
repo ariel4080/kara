@@ -6,6 +6,8 @@ class AppNavigation {
   static const String _splash = '/splash';
   static const String _login = '/login';
 
+  static String get login => _login;
+
   static final routerConfig = [
     GoRoute(name: _splash, path: _splash, builder:(context, state) => const SplashView(),),
     GoRoute(name: _login, path: _login, builder:(context, state) => const LoginView(),),
