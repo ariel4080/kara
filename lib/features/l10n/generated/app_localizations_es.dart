@@ -27,6 +27,9 @@ class AppLocalizationsEs extends AppLocalizations {
   String get label_login_with_google => 'Iniciar sesión con Google';
 
   @override
+  String get label_or => 'O';
+
+  @override
   String get label_new_user => '¿Eres nuevo?';
 
   @override

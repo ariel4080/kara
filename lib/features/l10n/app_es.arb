@@ -6,6 +6,7 @@
     "label_password": "Contraseña",
     "label_forgot_password": "¿Olvidaste tu contraseña?",
     "label_login_with_google": "Iniciar sesión con Google",
+    "label_or": "O",
     "label_new_user": "¿Eres nuevo?",
     "label_create_account": "Crear una cuenta"
 }

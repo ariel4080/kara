@@ -27,14 +27,16 @@ class _SplashScreen extends State<SplashView> {
   @override
   Widget build(content){
     AppLocalizations localizations = AppLocalizations.of(context)!;
+    final ThemeData karaTheme = Theme.of(context);
+
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 66, 2, 150),
+      backgroundColor: karaTheme.splashColor,
       body: Center(
         child: Text(
           localizations.appTitle,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 55,
-            color: Colors.white,
+            color: karaTheme.colorScheme.primary,
             fontWeight: FontWeight.bold,
           ),
         ),

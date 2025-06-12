@@ -131,6 +131,12 @@ abstract class AppLocalizations {
   /// **'Iniciar sesión con Google'**
   String get label_login_with_google;
 
+  /// No description provided for @label_or.
+  ///
+  /// In es, this message translates to:
+  /// **'O'**
+  String get label_or;
+
   /// No description provided for @label_new_user.
   ///
   /// In es, this message translates to:
