@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kara/features/l10n/generated/app_localizations.dart';
 
+import '../../l10n/generated/app_localizations.dart';
 import '../widgets/login_card_widget.dart';
 
 class LoginView extends StatelessWidget {
@@ -21,15 +21,11 @@ class LoginView extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
                   localizations!.appTitle,
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: karaTheme.colorScheme.secondary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: karaTheme.textTheme.displayLarge,
                 ),
               ),
             ),
-            LoginCardWidget(theme: karaTheme, localizations: localizations,),
+            LoginCardWidget(theme: karaTheme, localizations: localizations),
             Positioned(
               bottom: 0,
               left: 0,
@@ -39,12 +35,10 @@ class LoginView extends StatelessWidget {
                 children: [
                   Text(
                     localizations.label_new_user,
-                    style: const TextStyle(color: Colors.grey),
+                    style: karaTheme.textTheme.labelMedium,
                   ),
                   TextButton(
-                    onPressed: () {
-                      // Implement navigation to sign up view here
-                    },
+                    onPressed: null,
                     child: Text(
                       localizations.label_create_account,
                       style: TextStyle(color: karaTheme.colorScheme.secondary),
