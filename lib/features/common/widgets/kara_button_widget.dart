@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 
 class KaraButtonWidget extends StatelessWidget {
   final String label;
-  final Function onPressed;
+  final VoidCallback? onPressed;
   final Icon? icon;
   final bool isPrimary;
 
   const KaraButtonWidget({
     super.key,
     required this.label,
-    required this.onPressed,
-    required this.isPrimary, 
+    this.onPressed,
+    required this.isPrimary,
     this.icon,
   });
 
   factory KaraButtonWidget.primary({
     required String label,
-    required Function onPressed,
+    VoidCallback? onPressed,
     Icon? icon,
   }) {
     return KaraButtonWidget(
@@ -28,7 +28,7 @@ class KaraButtonWidget extends StatelessWidget {
   }
   factory KaraButtonWidget.secondary({
     required String label,
-    required Function onPressed,
+    VoidCallback? onPressed,
     Icon? icon,
   }) {
     return KaraButtonWidget(
@@ -45,25 +45,41 @@ class KaraButtonWidget extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 50,
-      child: icon == null? 
-        ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: isPrimary? karaTheme.colorScheme.secondary : karaTheme.colorScheme.primary,
-            foregroundColor: isPrimary? karaTheme.colorScheme.primary : karaTheme.colorScheme.secondary,
-          ),
-          onPressed: () => onPressed,
-          child: Text(label),
-        )
-        : 
-        ElevatedButton.icon(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: isPrimary? karaTheme.colorScheme.secondary : karaTheme.colorScheme.primary,
-            foregroundColor: isPrimary? karaTheme.colorScheme.primary : karaTheme.colorScheme.secondary,
-          ),
-          onPressed: () => onPressed(),
-          icon: icon!,
-          label: Text(label),
-        ),
+      child:
+          icon == null
+              ? ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      isPrimary
+                          ? karaTheme.colorScheme.secondary.withValues(
+                            alpha: 0.8,
+                          )
+                          : karaTheme.colorScheme.primary,
+                  foregroundColor:
+                      isPrimary
+                          ? karaTheme.colorScheme.primary
+                          : karaTheme.colorScheme.secondary,
+                ),
+                onPressed: onPressed,
+                child: Text(label),
+              )
+              : ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      isPrimary
+                          ? karaTheme.colorScheme.secondary.withValues(
+                            alpha: 0.8,
+                          )
+                          : karaTheme.colorScheme.primary,
+                  foregroundColor:
+                      isPrimary
+                          ? karaTheme.colorScheme.primary
+                          : karaTheme.colorScheme.secondary,
+                ),
+                onPressed: onPressed,
+                icon: icon!,
+                label: Text(label),
+              ),
     );
   }
 }
