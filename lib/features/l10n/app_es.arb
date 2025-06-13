@@ -8,5 +8,7 @@
     "label_login_with_google": "Iniciar sesión con Google",
     "label_or": "O",
     "label_new_user": "¿Eres nuevo?",
-    "label_create_account": "Crear una cuenta"
+    "label_create_account": "Crear una cuenta",
+    "error_email_required": "Ingrese un correo válido",
+    "error_password_required": "Ingrese una contraseña válida"
 }

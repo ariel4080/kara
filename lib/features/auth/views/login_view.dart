@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kara/features/l10n/generated/app_localizations.dart';
 
+import '../../l10n/generated/app_localizations.dart';
 import '../widgets/login_card_widget.dart';
 
 class LoginView extends StatelessWidget {
@@ -14,46 +14,48 @@ class LoginView extends StatelessWidget {
     return Scaffold(
       backgroundColor: karaTheme.primaryColor,
       body: SafeArea(
-        child: Stack(
-          children: [
-            Positioned(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Text(
-                  localizations!.appTitle,
-                  style: TextStyle(
-                    fontSize: 32,
-                    color: karaTheme.colorScheme.secondary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
+        child: SingleChildScrollView(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom,
             ),
-            LoginCardWidget(theme: karaTheme, localizations: localizations,),
-            Positioned(
-              bottom: 0,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+            child: IntrinsicHeight(
+              child: Column(
                 children: [
-                  Text(
-                    localizations.label_new_user,
-                    style: const TextStyle(color: Colors.grey),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Text(
+                          localizations!.appTitle,
+                          style: karaTheme.textTheme.displayLarge,
+                        ),
+                      ),
+                    ],
                   ),
-                  TextButton(
-                    onPressed: () {
-                      // Implement navigation to sign up view here
-                    },
-                    child: Text(
-                      localizations.label_create_account,
-                      style: TextStyle(color: karaTheme.colorScheme.secondary),
-                    ),
+                  const Spacer(),
+                  LoginCardWidget(theme: karaTheme, localizations: localizations),
+                  const Spacer(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        localizations.label_new_user,
+                        style: karaTheme.textTheme.labelMedium,
+                      ),
+                      TextButton(
+                        onPressed: null,
+                        child: Text(
+                          localizations.label_create_account,
+                          style: TextStyle(color: karaTheme.colorScheme.secondary),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
-          ],
+          ),
         ),
       ),
     );

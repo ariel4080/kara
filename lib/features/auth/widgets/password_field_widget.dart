@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:kara/features/l10n/generated/app_localizations.dart';
 
 class PasswordFieldWidget extends StatefulWidget {
-  const PasswordFieldWidget({super.key, required this.localizations});
+  const PasswordFieldWidget({
+    super.key,
+    required this.localizations,
+    this.controller,
+    this.validator,
+  });
 
   final AppLocalizations localizations;
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
 
   @override
   State<PasswordFieldWidget> createState() => _PasswordFieldWidgetState();
@@ -15,7 +22,8 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      controller: widget.controller,
       obscureText: !_isPasswordVisible,
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
@@ -32,6 +40,7 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
           },
         ),
       ),
+      validator: widget.validator,
     );
   }
 }
