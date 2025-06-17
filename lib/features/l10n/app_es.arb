@@ -10,5 +10,7 @@
     "label_new_user": "¿Eres nuevo?",
     "label_create_account": "Crear una cuenta",
     "error_email_required": "Ingrese un correo válido",
-    "error_password_required": "Ingrese una contraseña válida"
+    "error_password_required": "Ingrese una contraseña válida",
+    "label_home": "Inicio",
+    "label_welcome": "¡Bienvenido a la vista de inicio {userName}!"
 }

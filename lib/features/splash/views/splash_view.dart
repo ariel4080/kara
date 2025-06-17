@@ -4,30 +4,19 @@ import 'package:go_router/go_router.dart';
 import '../../../navigation/app_navigation.dart';
 import '../../l10n/generated/app_localizations.dart';
 
-class SplashView extends StatefulWidget {
+class SplashView extends StatelessWidget {
   const SplashView({super.key});
 
   @override
-  State<SplashView> createState() => _SplashScreen();
-}
-
-class _SplashScreen extends State<SplashView> {
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 3), () {
-      // Navigate to the next screen after the delay
-      if(context.mounted) {
-        context.go(AppNavigation.login); 
-      }
-    });
-  }
-
-  @override
-  Widget build(content){
+  Widget build(BuildContext context) {
     AppLocalizations localizations = AppLocalizations.of(context)!;
     final ThemeData karaTheme = Theme.of(context);
+
+    Future.delayed(const Duration(seconds: 3), () {
+      if(context.mounted) {
+        context.go(AppNavigation.login);
+      }
+    });
 
     return Scaffold(
       backgroundColor: karaTheme.splashColor,
