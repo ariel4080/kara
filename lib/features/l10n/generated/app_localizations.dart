@@ -148,6 +148,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Crear una cuenta'**
   String get label_create_account;
+
+  /// No description provided for @error_email_required.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingrese un correo válido'**
+  String get error_email_required;
+
+  /// No description provided for @error_password_required.
+  ///
+  /// In es, this message translates to:
+  /// **'Ingrese una contraseña válida'**
+  String get error_password_required;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

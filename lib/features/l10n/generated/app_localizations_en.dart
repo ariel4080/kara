@@ -34,4 +34,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get label_create_account => 'Create an account';
+
+  @override
+  String get error_email_required => 'Please enter a valid email';
+
+  @override
+  String get error_password_required => 'Please enter a valid password';
 }
