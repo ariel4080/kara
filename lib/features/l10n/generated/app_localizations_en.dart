@@ -40,4 +40,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get error_password_required => 'Please enter a valid password';
+
+  @override
+  String get label_home => 'Home';
+
+  @override
+  String label_welcome(Object userName) {
+    return 'Welcome to the Home View $userName!';
+  }
 }

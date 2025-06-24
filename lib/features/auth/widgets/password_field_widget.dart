@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kara/features/l10n/generated/app_localizations.dart';
+
+import '../../l10n/generated/app_localizations.dart';
 
 class PasswordFieldWidget extends StatefulWidget {
   const PasswordFieldWidget({
@@ -31,7 +32,7 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
         border: const OutlineInputBorder(),
         suffixIcon: IconButton(
           icon: Icon(
-            _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+            _isPasswordVisible ?  Icons.visibility_off: Icons.visibility,
           ),
           onPressed: () {
             setState(() {

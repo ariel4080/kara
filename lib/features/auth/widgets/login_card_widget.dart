@@ -11,10 +11,18 @@ class LoginCardWidget extends StatefulWidget {
     super.key,
     required this.theme,
     required this.localizations,
+    required this.onSignIn, 
+    this.onSignInWithGoogle,
+    this.isLoadingSignIn = false,
+    this.isLoadingSignInWithGoogle = false,
   });
 
   final AppLocalizations localizations;
   final ThemeData theme;
+  final void Function(String user, String password) onSignIn;
+  final bool isLoadingSignIn;
+  final VoidCallback? onSignInWithGoogle;
+  final bool isLoadingSignInWithGoogle;
 
   @override
   State<LoginCardWidget> createState() => _LoginCardWidget();
@@ -36,6 +44,15 @@ class _LoginCardWidget extends State<LoginCardWidget> {
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+  }
+
+  void onSignIn(){
+    if (_formKey.currentState?.validate() ?? false) {
+      widget.onSignIn(
+        _emailController.text.trim(),
+        _passwordController.text.trim(),
+      );
+    }
   }
 
   @override
@@ -92,9 +109,7 @@ class _LoginCardWidget extends State<LoginCardWidget> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {
-                            // Implement forgot password functionality here
-                          },
+                          onPressed: null,
                           child: Text(
                             widget.localizations.label_forgot_password,
                           ),
@@ -103,15 +118,17 @@ class _LoginCardWidget extends State<LoginCardWidget> {
                       const SizedBox(height: 16),
                       KaraButtonWidget.primary(
                         label: widget.localizations.title_login,
-                        onPressed: _submit,
+                        onPressed: onSignIn,
+                        isLoading: widget.isLoadingSignIn
                       ),
                       const SizedBox(height: 16),
                       KaraDividerWidget(text: widget.localizations.label_or),
                       const SizedBox(height: 16),
                       KaraButtonWidget.secondary(
                         label: widget.localizations.label_login_with_google,
-                        onPressed: () {},
+                        onPressed: widget.onSignInWithGoogle,
                         icon: const Icon(Icons.g_mobiledata),
+                        isLoading: widget.isLoadingSignInWithGoogle,
                       ),
                     ],
                   ),
@@ -122,12 +139,5 @@ class _LoginCardWidget extends State<LoginCardWidget> {
         ),
       ),
     );
-  }
-
-  void _submit() {
-    final isValid = _formKey.currentState?.validate() ?? false;
-    if (isValid) {
-      // This is where you would handle the login logic, such as calling an API or navigating to another screen.
-    }
   }
 }

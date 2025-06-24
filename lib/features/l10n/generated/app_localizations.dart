@@ -160,6 +160,18 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Ingrese una contraseña válida'**
   String get error_password_required;
+
+  /// No description provided for @label_home.
+  ///
+  /// In es, this message translates to:
+  /// **'Inicio'**
+  String get label_home;
+
+  /// No description provided for @label_welcome.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Bienvenido a la vista de inicio {userName}!'**
+  String label_welcome(Object userName);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
