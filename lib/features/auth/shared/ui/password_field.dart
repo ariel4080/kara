@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../l10n/generated/app_localizations.dart';
+import '../../../../core/config/l10n/generated/app_localizations.dart';
 
-class PasswordFieldWidget extends StatefulWidget {
-  const PasswordFieldWidget({
+class PasswordField extends StatefulWidget {
+  const PasswordField({
     super.key,
     required this.localizations,
     this.controller,
@@ -15,10 +15,10 @@ class PasswordFieldWidget extends StatefulWidget {
   final String? Function(String?)? validator;
 
   @override
-  State<PasswordFieldWidget> createState() => _PasswordFieldWidgetState();
+  State<PasswordField> createState() => _PasswordFieldState();
 }
 
-class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
+class _PasswordFieldState extends State<PasswordField> {
   bool _isPasswordVisible = false;
 
   @override
@@ -32,7 +32,7 @@ class _PasswordFieldWidgetState extends State<PasswordFieldWidget> {
         border: const OutlineInputBorder(),
         suffixIcon: IconButton(
           icon: Icon(
-            _isPasswordVisible ?  Icons.visibility_off: Icons.visibility,
+            _isPasswordVisible ? Icons.visibility_off : Icons.visibility,
           ),
           onPressed: () {
             setState(() {

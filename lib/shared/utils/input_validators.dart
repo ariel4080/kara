@@ -1,6 +1,7 @@
-import '../../l10n/generated/app_localizations.dart';
 
-class FeaturesUtils {
+import '../../core/config/l10n/generated/app_localizations.dart';
+
+class InputValidators {
   static String? validateEmail(String? value, AppLocalizations localizations) {
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+$');
     if (null == value || value.isEmpty || !emailRegex.hasMatch(value)) {

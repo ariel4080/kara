@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-import '../../common/util/features_utils.dart';
-import '../../common/widgets/kara_button_widget.dart';
-import '../../common/widgets/kara_divider_widget.dart';
-import '../../l10n/generated/app_localizations.dart';
-import 'password_field_widget.dart';
+import '../../../../core/config/l10n/generated/app_localizations.dart';
+import '../../../../shared/ui/default_button.dart';
+import '../../../../shared/ui/default_divider.dart';
+import '../../../../shared/utils/input_validators.dart';
+import 'password_field.dart';
 
-class LoginCardWidget extends StatefulWidget {
-  const LoginCardWidget({
+class LoginCard extends StatefulWidget {
+  const LoginCard({
     super.key,
     required this.theme,
     required this.localizations,
-    required this.onSignIn, 
+    required this.onSignIn,
     this.onSignInWithGoogle,
     this.isLoadingSignIn = false,
     this.isLoadingSignInWithGoogle = false,
@@ -25,10 +25,10 @@ class LoginCardWidget extends StatefulWidget {
   final bool isLoadingSignInWithGoogle;
 
   @override
-  State<LoginCardWidget> createState() => _LoginCardWidget();
+  State<LoginCard> createState() => _LoginCard();
 }
 
-class _LoginCardWidget extends State<LoginCardWidget> {
+class _LoginCard extends State<LoginCard> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   final TextEditingController _emailController = TextEditingController();
@@ -46,7 +46,7 @@ class _LoginCardWidget extends State<LoginCardWidget> {
     _passwordController.dispose();
   }
 
-  void onSignIn(){
+  void onSignIn() {
     if (_formKey.currentState?.validate() ?? false) {
       widget.onSignIn(
         _emailController.text.trim(),
@@ -95,16 +95,20 @@ class _LoginCardWidget extends State<LoginCardWidget> {
                           border: const OutlineInputBorder(),
                         ),
                         validator:
-                            (value) =>
-                                FeaturesUtils.validateEmail(value, widget.localizations),
+                            (value) => InputValidators.validateEmail(
+                              value,
+                              widget.localizations,
+                            ),
                       ),
                       const SizedBox(height: 16),
-                      PasswordFieldWidget(
+                      PasswordField(
                         localizations: widget.localizations,
                         controller: _passwordController,
                         validator:
-                            (value) =>
-                                FeaturesUtils.validatePassword(value, widget.localizations),
+                            (value) => InputValidators.validatePassword(
+                              value,
+                              widget.localizations,
+                            ),
                       ),
                       Align(
                         alignment: Alignment.centerRight,
@@ -116,15 +120,15 @@ class _LoginCardWidget extends State<LoginCardWidget> {
                         ),
                       ),
                       const SizedBox(height: 16),
-                      KaraButtonWidget.primary(
+                      DefaultButton.primary(
                         label: widget.localizations.title_login,
                         onPressed: onSignIn,
-                        isLoading: widget.isLoadingSignIn
+                        isLoading: widget.isLoadingSignIn,
                       ),
                       const SizedBox(height: 16),
-                      KaraDividerWidget(text: widget.localizations.label_or),
+                      DefaultDivider(text: widget.localizations.label_or),
                       const SizedBox(height: 16),
-                      KaraButtonWidget.secondary(
+                      DefaultButton.secondary(
                         label: widget.localizations.label_login_with_google,
                         onPressed: widget.onSignInWithGoogle,
                         icon: const Icon(Icons.g_mobiledata),

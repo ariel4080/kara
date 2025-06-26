@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
-class KaraDividerWidget extends StatelessWidget {
-  const KaraDividerWidget({
+import '../theme/app_colors.dart';
+
+class DefaultDivider extends StatelessWidget {
+  const DefaultDivider({
     super.key,
     this.height = 1.0,
-    this.color = const Color(0xFFBDBDBD),
+    this.color = AppColors.greyLight,
     this.text,
   });
 
@@ -22,13 +24,7 @@ class KaraDividerWidget extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
                 text!,
-                style: TextStyle(
-                  color:
-                      Colors
-                          .grey
-                          .shade600, // This remains unchanged as it's not part of a constant expression.
-                  fontSize: 16,
-                ),
+                style: const TextStyle(color: AppColors.greyDark, fontSize: 16),
               ),
             )
             : const SizedBox(),

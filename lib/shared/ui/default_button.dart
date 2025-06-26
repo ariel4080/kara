@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class KaraButtonWidget extends StatelessWidget {
+class DefaultButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
   final Icon? icon;
   final bool? isLoading;
   final bool isPrimary;
 
-  const KaraButtonWidget({
+  const DefaultButton({
     super.key,
     required this.label,
     this.onPressed,
@@ -16,13 +16,13 @@ class KaraButtonWidget extends StatelessWidget {
     this.isLoading,
   });
 
-  factory KaraButtonWidget.primary({
+  factory DefaultButton.primary({
     required String label,
     VoidCallback? onPressed,
     Icon? icon,
     bool? isLoading = false,
   }) {
-    return KaraButtonWidget(
+    return DefaultButton(
       label: label,
       onPressed: onPressed,
       isPrimary: true,
@@ -30,13 +30,13 @@ class KaraButtonWidget extends StatelessWidget {
       isLoading: isLoading,
     );
   }
-  factory KaraButtonWidget.secondary({
+  factory DefaultButton.secondary({
     required String label,
     VoidCallback? onPressed,
     Icon? icon,
     bool? isLoading = false,
   }) {
-    return KaraButtonWidget(
+    return DefaultButton(
       label: label,
       onPressed: onPressed,
       isPrimary: false,
@@ -46,7 +46,7 @@ class KaraButtonWidget extends StatelessWidget {
   }
   @override
   Widget build(BuildContext context) {
-    final ThemeData karaTheme = Theme.of(context);
+    final ThemeData appTheme = Theme.of(context);
     return SizedBox(
       width: double.infinity,
       height: 50,
@@ -56,14 +56,14 @@ class KaraButtonWidget extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
                       isPrimary
-                          ? karaTheme.colorScheme.secondary.withValues(
+                          ? appTheme.colorScheme.secondary.withValues(
                             alpha: 0.8,
                           )
-                          : karaTheme.colorScheme.primary,
+                          : appTheme.colorScheme.primary,
                   foregroundColor:
                       isPrimary
-                          ? karaTheme.colorScheme.primary
-                          : karaTheme.colorScheme.secondary,
+                          ? appTheme.colorScheme.primary
+                          : appTheme.colorScheme.secondary,
                 ),
                 onPressed: onPressed,
                 child:
@@ -75,8 +75,8 @@ class KaraButtonWidget extends StatelessWidget {
                             strokeWidth: 2,
                             color:
                                 isPrimary
-                                    ? karaTheme.colorScheme.primary
-                                    : karaTheme.colorScheme.secondary,
+                                    ? appTheme.colorScheme.primary
+                                    : appTheme.colorScheme.secondary,
                           ),
                         )
                         : Text(label),
@@ -85,14 +85,14 @@ class KaraButtonWidget extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor:
                       isPrimary
-                          ? karaTheme.colorScheme.secondary.withValues(
+                          ? appTheme.colorScheme.secondary.withValues(
                             alpha: 0.8,
                           )
-                          : karaTheme.colorScheme.primary,
+                          : appTheme.colorScheme.primary,
                   foregroundColor:
                       isPrimary
-                          ? karaTheme.colorScheme.primary
-                          : karaTheme.colorScheme.secondary,
+                          ? appTheme.colorScheme.primary
+                          : appTheme.colorScheme.secondary,
                 ),
                 onPressed: onPressed,
                 icon: icon!,

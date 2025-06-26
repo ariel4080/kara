@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
+<dict>    
+<!-- THIS DATA IS FAKE AND FOR TESTING PURPOSES ONLY -->
 	<key>API_KEY</key>
-	<string>AIzaSyAP1OC5WPTBc0iZIJmCBmzoBtUEmWP00FQ</string>
+	<string>AIzaSyATbE3rxGLQlP6i_F7Ob2mFZSZuIHrl4RQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>339748717978</string>
+	<string>751553470445</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.kara</string>
+	<string>com.fake.kara-fake</string>
 	<key>PROJECT_ID</key>
-	<string>kara-9f053</string>
+	<string>kara-fake</string>
 	<key>STORAGE_BUCKET</key>
-	<string>kara-9f053.firebasestorage.app</string>
+	<string>kara-fake.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:339748717978:ios:1e7bd0e76cf3a176616623</string>
+	<string>1:751553470445:ios:39188311cb17633cfb91e4</string>
 </dict>
 </plist>

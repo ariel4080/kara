@@ -2,34 +2,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../navigation/app_navigation.dart';
-import '../../l10n/generated/app_localizations.dart';
-import '../widgets/login_card_widget.dart';
+import '../../../core/config/l10n/generated/app_localizations.dart';
+import '../../../core/navigation/app_navigation.dart';
+import '../shared/ui/login_card.dart';
 import 'view_model/auth_view_model.dart';
 
-class LoginView extends ConsumerStatefulWidget {
-  const LoginView({super.key});
+class LoginScreen extends ConsumerStatefulWidget {
+  final AppLocalizations? localizations;
+  final ThemeData appTheme;
+  const LoginScreen({
+    super.key,
+    required this.localizations,
+    required this.appTheme,
+  });
 
   @override
-  ConsumerState<LoginView> createState() => _LoginViewState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginViewState extends ConsumerState<LoginView> {
-
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    AppLocalizations? localizations = AppLocalizations.of(context);
-    final ThemeData karaTheme = Theme.of(context);
-
-    final isLoading = ref.watch(userAuthViewModel).isLoading;
+    final isLoading = ref.watch(authViewModelProvider).isLoading;
 
     return Scaffold(
-      backgroundColor: karaTheme.primaryColor,
+      backgroundColor: widget.appTheme.primaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              minHeight: MediaQuery.of(context).size.height - MediaQuery.of(context).padding.top - MediaQuery.of(context).padding.bottom,
+              minHeight:
+                  MediaQuery.of(context).size.height -
+                  MediaQuery.of(context).padding.top -
+                  MediaQuery.of(context).padding.bottom,
             ),
             child: IntrinsicHeight(
               child: Column(
@@ -39,16 +44,16 @@ class _LoginViewState extends ConsumerState<LoginView> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Text(
-                          localizations!.appTitle,
-                          style: karaTheme.textTheme.displayLarge,
+                          widget.localizations!.appTitle,
+                          style: widget.appTheme.textTheme.displayLarge,
                         ),
                       ),
                     ],
                   ),
                   const Spacer(),
-                  LoginCardWidget(
-                    theme: karaTheme, 
-                    localizations: localizations,
+                  LoginCard(
+                    theme: widget.appTheme,
+                    localizations: widget.localizations!,
                     onSignIn: logIn,
                     isLoadingSignIn: isLoading,
                     onSignInWithGoogle: null,
@@ -58,14 +63,16 @@ class _LoginViewState extends ConsumerState<LoginView> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        localizations.label_new_user,
-                        style: karaTheme.textTheme.labelMedium,
+                        widget.localizations!.label_new_user,
+                        style: widget.appTheme.textTheme.labelMedium,
                       ),
                       TextButton(
                         onPressed: null,
                         child: Text(
-                          localizations.label_create_account,
-                          style: TextStyle(color: karaTheme.colorScheme.secondary),
+                          widget.localizations!.label_create_account,
+                          style: TextStyle(
+                            color: widget.appTheme.colorScheme.secondary,
+                          ),
                         ),
                       ),
                     ],
@@ -80,8 +87,8 @@ class _LoginViewState extends ConsumerState<LoginView> {
   }
 
   Future<void> logIn(String email, String password) async {
-    await ref.read(userAuthViewModel.notifier).signIn(email, password);
-    if(ref.read(userAuthViewModel).value != null && mounted) {
+    await ref.read(authViewModelProvider.notifier).signIn(email, password);
+    if (ref.read(authViewModelProvider).value != null && mounted) {
       context.go(AppNavigation.home);
     }
   }
