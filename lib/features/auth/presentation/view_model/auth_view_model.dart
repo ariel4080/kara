@@ -1,18 +1,19 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../data/repository/auth_repository.dart';
 
-final userAuthViewModel = AsyncNotifierProvider<UserAuthViewModel, User?>(() => UserAuthViewModel(AuthRepository(FirebaseAuth.instance)));
+part 'auth_view_model.g.dart';
 
-class UserAuthViewModel extends AsyncNotifier<User?> {
-  final AuthRepository _authRepository;
-
-  UserAuthViewModel(this._authRepository);
+@Riverpod(keepAlive: true)
+class AuthViewModel extends _$AuthViewModel {
+  late final AuthRepository _authRepository;
 
   @override
-  Future<User?> build() async => _authRepository.currentUser;
+  Future<User?> build() async {
+    _authRepository = AuthRepository(FirebaseAuth.instance);
+    return _authRepository.currentUser;
+  }
 
   Future<void> signIn(String email, String password) async {
     state = const AsyncValue.loading();
