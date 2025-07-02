@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/l10n/generated/app_localizations.dart';
 import '../../../core/navigation/app_navigation.dart';
+import '../../auth/presentation/view_model/auth_view_model.dart';
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends ConsumerWidget {
   final AppLocalizations? localizations;
   final ThemeData appTheme;
   const SplashScreen({
@@ -14,10 +16,14 @@ class SplashScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    Future.delayed(const Duration(seconds: 3), () {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bool isAuth = ref.watch(authViewModelProvider).value != null;
+
+    Future.delayed(const Duration(seconds: 3), () async {
       if (context.mounted) {
-        context.go(AppNavigation.login);
+        isAuth
+            ? context.go(AppNavigation.menu)
+            : context.go(AppNavigation.login);
       }
     });
 

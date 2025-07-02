@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "751553470445",
+    "project_id": "kara-fake",
+    "storage_bucket": "kara-fake.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751553470445:android:d392f9db73d17df1fb91e4",
+        "android_client_info": {
+          "package_name": "com.fake.karafake"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEpW9uM8UEDGT-Fhrtk_yUrhWOloX_AFo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

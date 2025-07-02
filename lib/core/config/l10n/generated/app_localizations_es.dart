@@ -45,7 +45,16 @@ class AppLocalizationsEs extends AppLocalizations {
   String get label_home => 'Inicio';
 
   @override
-  String label_welcome(Object userName) {
-    return '¡Bienvenido a la vista de inicio $userName!';
+  String get label_appointments => 'Citas';
+
+  @override
+  String get label_history => 'Historial';
+
+  @override
+  String get label_settings => 'Configuración';
+
+  @override
+  String label_welcome(Object label_page, Object userName) {
+    return '¡Bienvenido a la vista de $label_page $userName!';
   }
 }

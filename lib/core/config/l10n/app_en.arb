@@ -12,5 +12,8 @@
     "error_email_required": "Please enter a valid email",
     "error_password_required": "Please enter a valid password",
     "label_home": "Home",
-    "label_welcome": "Welcome to the Home View {userName}!"
+    "label_appointments": "Appointments",
+    "label_history": "History",
+    "label_settings": "Settings",
+    "label_welcome": "Welcome to the {label_page} View {userName}!"
 }
