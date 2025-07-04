@@ -6,8 +6,8 @@ import '../../../core/navigation/app_navigation.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
 import '../../menu/shared/base_model.dart';
 
-class HomeScreen extends ConsumerWidget with BaseModel {
-  HomeScreen({
+class HistoryScreen extends ConsumerWidget with BaseModel {
+  HistoryScreen({
     super.key,
     required localizations,
     required appTheme,

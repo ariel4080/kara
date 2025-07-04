@@ -167,11 +167,29 @@ abstract class AppLocalizations {
   /// **'Inicio'**
   String get label_home;
 
+  /// No description provided for @label_appointments.
+  ///
+  /// In es, this message translates to:
+  /// **'Citas'**
+  String get label_appointments;
+
+  /// No description provided for @label_history.
+  ///
+  /// In es, this message translates to:
+  /// **'Historial'**
+  String get label_history;
+
+  /// No description provided for @label_settings.
+  ///
+  /// In es, this message translates to:
+  /// **'Configuración'**
+  String get label_settings;
+
   /// No description provided for @label_welcome.
   ///
   /// In es, this message translates to:
-  /// **'¡Bienvenido a la vista de inicio {userName}!'**
-  String label_welcome(Object userName);
+  /// **'¡Bienvenido a la vista de {label_page} {userName}!'**
+  String label_welcome(Object label_page, Object userName);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

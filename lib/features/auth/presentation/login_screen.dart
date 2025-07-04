@@ -7,7 +7,7 @@ import '../../../core/navigation/app_navigation.dart';
 import '../shared/ui/login_card.dart';
 import 'view_model/auth_view_model.dart';
 
-class LoginScreen extends ConsumerStatefulWidget {
+class LoginScreen extends ConsumerWidget {
   final AppLocalizations? localizations;
   final ThemeData appTheme;
   const LoginScreen({
@@ -17,16 +17,11 @@ class LoginScreen extends ConsumerStatefulWidget {
   });
 
   @override
-  ConsumerState<LoginScreen> createState() => _LoginScreenState();
-}
-
-class _LoginScreenState extends ConsumerState<LoginScreen> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isLoading = ref.watch(authViewModelProvider).isLoading;
 
     return Scaffold(
-      backgroundColor: widget.appTheme.primaryColor,
+      backgroundColor: appTheme.primaryColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: ConstrainedBox(
@@ -44,17 +39,19 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Text(
-                          widget.localizations!.appTitle,
-                          style: widget.appTheme.textTheme.displayLarge,
+                          localizations!.appTitle,
+                          style: appTheme.textTheme.displayLarge,
                         ),
                       ),
                     ],
                   ),
                   const Spacer(),
                   LoginCard(
-                    theme: widget.appTheme,
-                    localizations: widget.localizations!,
-                    onSignIn: logIn,
+                    theme: appTheme,
+                    localizations: localizations!,
+                    onSignIn:
+                        (email, password) =>
+                            logIn(email, password, context, ref),
                     isLoadingSignIn: isLoading,
                     onSignInWithGoogle: null,
                   ),
@@ -63,15 +60,15 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        widget.localizations!.label_new_user,
-                        style: widget.appTheme.textTheme.labelMedium,
+                        localizations!.label_new_user,
+                        style: appTheme.textTheme.labelMedium,
                       ),
                       TextButton(
                         onPressed: null,
                         child: Text(
-                          widget.localizations!.label_create_account,
+                          localizations!.label_create_account,
                           style: TextStyle(
-                            color: widget.appTheme.colorScheme.secondary,
+                            color: appTheme.colorScheme.secondary,
                           ),
                         ),
                       ),
@@ -86,10 +83,17 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     );
   }
 
-  Future<void> logIn(String email, String password) async {
-    await ref.read(authViewModelProvider.notifier).signIn(email, password);
-    if (ref.read(authViewModelProvider).value != null && mounted) {
-      context.go(AppNavigation.home);
+  Future<void> logIn(
+    String email,
+    String password,
+    BuildContext context,
+    WidgetRef ref,
+  ) async {
+    await ref.read(authViewModelProvider.notifier).logIn(email, password);
+    if (ref.read(authViewModelProvider).value != null) {
+      if (context.mounted) {
+        context.go(AppNavigation.menu);
+      }
     }
   }
 }

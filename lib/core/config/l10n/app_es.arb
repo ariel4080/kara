@@ -12,5 +12,8 @@
     "error_email_required": "Ingrese un correo válido",
     "error_password_required": "Ingrese una contraseña válida",
     "label_home": "Inicio",
-    "label_welcome": "¡Bienvenido a la vista de inicio {userName}!"
+    "label_appointments": "Citas",
+    "label_history": "Historial",
+    "label_settings": "Configuración",
+    "label_welcome": "¡Bienvenido a la vista de {label_page} {userName}!"
 }

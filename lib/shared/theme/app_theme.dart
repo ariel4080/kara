@@ -5,6 +5,8 @@ import 'app_colors.dart';
 class AppTheme {
   static ThemeData get theme {
     return ThemeData(
+      splashFactory: NoSplash.splashFactory,
+      highlightColor: Colors.transparent,
       splashColor: AppColors.blue,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme.fromSeed(
