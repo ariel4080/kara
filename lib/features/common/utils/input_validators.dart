@@ -1,5 +1,4 @@
-
-import '../../core/config/l10n/generated/app_localizations.dart';
+import '../../../core/config/l10n/generated/app_localizations.dart';
 
 class InputValidators {
   static String? validateEmail(String? value, AppLocalizations localizations) {
@@ -10,7 +9,10 @@ class InputValidators {
     return null;
   }
 
-  static String? validatePassword(String? value, AppLocalizations localizations) {
+  static String? validatePassword(
+    String? value,
+    AppLocalizations localizations,
+  ) {
     final passwRegex = RegExp(
       r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{6,}$',
     );

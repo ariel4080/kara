@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/config/l10n/generated/app_localizations.dart';
-import '../../../../shared/ui/default_button.dart';
-import '../../../../shared/ui/default_divider.dart';
-import '../../../../shared/utils/input_validators.dart';
+import '../assets.dart';
+import '../utils/input_validators.dart';
+import 'default_button.dart';
+import 'default_divider.dart';
 import 'password_field.dart';
 
 class LoginCard extends StatefulWidget {
@@ -129,9 +131,13 @@ class _LoginCard extends State<LoginCard> {
                       DefaultDivider(text: widget.localizations.label_or),
                       const SizedBox(height: 16),
                       DefaultButton.secondary(
-                        label: widget.localizations.label_login_with_google,
+                        label: widget.localizations.label_join_with_google,
                         onPressed: widget.onSignInWithGoogle,
-                        icon: const Icon(Icons.g_mobiledata),
+                        icon: SvgPicture.asset(
+                          AppAssets.googleLogo,
+                          width: 33,
+                          height: 33,
+                        ),
                         isLoading: widget.isLoadingSignInWithGoogle,
                       ),
                     ],

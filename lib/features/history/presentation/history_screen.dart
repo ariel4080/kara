@@ -26,8 +26,8 @@ class HistoryScreen extends ConsumerWidget with BaseModel {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final user = ref.watch(authViewModelProvider);
-    final userName = user.value?.displayName ?? '';
+    final user = ref.watch(authViewModelProvider).value?.user;
+    final userName = user?.displayName ?? '';
 
     return Scaffold(
       backgroundColor: appTheme.primaryColor,

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DefaultButton extends StatelessWidget {
   final String label;
   final VoidCallback? onPressed;
-  final Icon? icon;
+  final Widget? icon;
   final bool? isLoading;
   final bool isPrimary;
 
@@ -33,7 +33,7 @@ class DefaultButton extends StatelessWidget {
   factory DefaultButton.secondary({
     required String label,
     VoidCallback? onPressed,
-    Icon? icon,
+    Widget? icon,
     bool? isLoading = false,
   }) {
     return DefaultButton(
@@ -95,8 +95,21 @@ class DefaultButton extends StatelessWidget {
                           : appTheme.colorScheme.secondary,
                 ),
                 onPressed: onPressed,
-                icon: icon!,
-                label: Text(label),
+                icon: isLoading == true ? null : icon!,
+                label:
+                    isLoading == true
+                        ? SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color:
+                                isPrimary
+                                    ? appTheme.colorScheme.primary
+                                    : appTheme.colorScheme.secondary,
+                          ),
+                        )
+                        : Text(label),
               ),
     );
   }

@@ -17,7 +17,7 @@ class SplashScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final bool isAuth = ref.watch(authViewModelProvider).value != null;
+    final bool isAuth = ref.watch(authViewModelProvider).value?.user != null;
 
     Future.delayed(const Duration(seconds: 3), () async {
       if (context.mounted) {

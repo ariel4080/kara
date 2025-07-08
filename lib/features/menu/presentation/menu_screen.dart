@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kara/features/menu/shared/page_builder.dart';
 
 import '../../../core/config/l10n/generated/app_localizations.dart';
-import '../../../shared/ui/animated_nav_icon.dart';
+import '../../common/ui/animated_nav_icon.dart';
 import '../shared/base_model.dart';
 
 class MenuScreen extends StatefulWidget {
