@@ -4,8 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'core/config/l10n/generated/app_localizations.dart';
 import 'core/navigation/app_navigation.dart';
+import 'features/common/theme/app_theme.dart';
 import 'firebase_options.dart';
-import 'shared/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

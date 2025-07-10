@@ -125,11 +125,11 @@ abstract class AppLocalizations {
   /// **'¿Olvidaste tu contraseña?'**
   String get label_forgot_password;
 
-  /// No description provided for @label_login_with_google.
+  /// No description provided for @label_join_with_google.
   ///
   /// In es, this message translates to:
-  /// **'Iniciar sesión con Google'**
-  String get label_login_with_google;
+  /// **'Unirse con Google'**
+  String get label_join_with_google;
 
   /// No description provided for @label_or.
   ///

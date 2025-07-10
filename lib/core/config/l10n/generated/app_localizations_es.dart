@@ -24,7 +24,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get label_forgot_password => '¿Olvidaste tu contraseña?';
 
   @override
-  String get label_login_with_google => 'Iniciar sesión con Google';
+  String get label_join_with_google => 'Unirse con Google';
 
   @override
   String get label_or => 'O';

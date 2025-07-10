@@ -1,10 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/config/l10n/generated/app_localizations.dart';
 import '../../../core/navigation/app_navigation.dart';
-import '../shared/ui/login_card.dart';
+import '../../common/ui/login_card.dart';
 import 'view_model/auth_view_model.dart';
 
 class LoginScreen extends ConsumerWidget {
@@ -18,7 +19,11 @@ class LoginScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isLoading = ref.watch(authViewModelProvider).isLoading;
+    final AsyncValue<AuthState?> authState = ref.watch(authViewModelProvider);
+    final bool isLoadingSignInWithPassword =
+        authState.value?.isLoadingSignInWithPasword ?? false;
+    final bool isLoadingSignInWithGoogle =
+        authState.value?.isLoadingSignInWithGoogle ?? false;
 
     return Scaffold(
       backgroundColor: appTheme.primaryColor,
@@ -52,8 +57,9 @@ class LoginScreen extends ConsumerWidget {
                     onSignIn:
                         (email, password) =>
                             logIn(email, password, context, ref),
-                    isLoadingSignIn: isLoading,
-                    onSignInWithGoogle: null,
+                    isLoadingSignIn: isLoadingSignInWithPassword,
+                    onSignInWithGoogle: () => logInWithGoogle(context, ref),
+                    isLoadingSignInWithGoogle: isLoadingSignInWithGoogle,
                   ),
                   const Spacer(),
                   Row(
@@ -90,10 +96,36 @@ class LoginScreen extends ConsumerWidget {
     WidgetRef ref,
   ) async {
     await ref.read(authViewModelProvider.notifier).logIn(email, password);
-    if (ref.read(authViewModelProvider).value != null) {
-      if (context.mounted) {
+    final AsyncValue<AuthState> authState = ref.read(authViewModelProvider);
+    if (context.mounted) {
+      if (authState.hasValue && authState.value!.user != null) {
         context.go(AppNavigation.menu);
       }
+      if (authState.hasError) {
+        handleError(authState.error as FirebaseAuthException, context);
+      }
     }
+  }
+
+  Future<void> logInWithGoogle(BuildContext context, WidgetRef ref) async {
+    await ref.read(authViewModelProvider.notifier).logInWithGoogle();
+    final AsyncValue<AuthState?> authState = ref.read(authViewModelProvider);
+    if (context.mounted) {
+      if (authState.hasValue && authState.value!.user != null) {
+        context.go(AppNavigation.menu);
+      }
+      if (authState.error != null) {
+        handleError(authState.error as FirebaseAuthException, context);
+      }
+    }
+  }
+
+  handleError(FirebaseAuthException error, BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(seconds: 5),
+        content: Text('${error.code}: ${error.message!}'),
+      ),
+    );
   }
 }

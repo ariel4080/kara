@@ -42,6 +42,18 @@ class AppTheme {
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(foregroundColor: AppColors.blue),
       ),
+      snackBarTheme: const SnackBarThemeData(
+        behavior: SnackBarBehavior.fixed,
+        backgroundColor: AppColors.red,
+        actionTextColor: AppColors.white,
+        contentTextStyle: TextStyle(
+          color: AppColors.white,
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          fontFamily: 'Roboto',
+        ),
+        showCloseIcon: true,
+      ),
     );
   }
 }
