@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 enum AppTransitionScreen {
   splash(Offset(0.0, 0.0)),
   login(Offset(0.0, 0.1)),
-  home(Offset(0.1, 0.0));
+  home(Offset(0.1, 0.0)),
+  signUp(Offset(1.0, 0.0));
 
   const AppTransitionScreen(this.offset);
 
@@ -11,7 +12,6 @@ enum AppTransitionScreen {
 }
 
 class AppTransitions {
-
   final AppTransitionScreen screenType;
 
   AppTransitions(this.screenType);
@@ -20,7 +20,7 @@ class AppTransitions {
     BuildContext context,
     Animation<double> animation,
     Animation<double> secondaryAnimation,
-    Widget child
+    Widget child,
   ) {
     return FadeTransition(
       opacity: animation,

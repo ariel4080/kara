@@ -12,7 +12,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appTitle => 'Kara';
 
   @override
-  String get title_login => 'Login';
+  String get title_sigin => 'Sign In';
+
+  @override
+  String get title_signup => 'Sign Up';
+
+  @override
+  String get title_reset_password => 'Reset Password';
 
   @override
   String get label_email => 'Email';
@@ -56,5 +62,28 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String label_welcome(Object label_page, Object userName) {
     return 'Welcome to the $label_page View $userName!';
+  }
+
+  @override
+  String get label_name => 'Name';
+
+  @override
+  String get label_confirm_password => 'Confirm Password';
+
+  @override
+  String get error_password_mismatch => 'Passwords do not match';
+
+  @override
+  String get error_value_required => 'This field is required';
+
+  @override
+  String get label_already_have_account => 'Already have an account?';
+
+  @override
+  String get label_back => 'Back';
+
+  @override
+  String label_msj_reset(Object email) {
+    return 'Password reset email sent to $email';
   }
 }

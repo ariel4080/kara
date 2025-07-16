@@ -1,7 +1,9 @@
 {
     "@@locale": "es",
     "appTitle": "Kara",
-    "title_login": "Iniciar sesión",
+    "title_sigin": "Iniciar sesión",
+    "title_signup": "Registrarse",
+    "title_reset_password": "Restablecer contraseña",
     "label_email": "Correo electrónico",
     "label_password": "Contraseña",
     "label_forgot_password": "¿Olvidaste tu contraseña?",
@@ -15,5 +17,12 @@
     "label_appointments": "Citas",
     "label_history": "Historial",
     "label_settings": "Configuración",
-    "label_welcome": "¡Bienvenido a la vista de {label_page} {userName}!"
+    "label_welcome": "¡Bienvenido a la vista de {label_page} {userName}!",
+    "label_name": "Nombre",
+    "label_confirm_password": "Confirmar contraseña",
+    "error_password_mismatch": "Las contraseñas no coinciden",
+    "error_value_required": "Este campo es obligatorio",
+    "label_already_have_account": "¿Ya tienes una cuenta?",
+    "label_back": "Atrás",
+    "label_msj_reset": "Password reset email sent to {email}"
 }

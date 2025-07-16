@@ -24,4 +24,21 @@ class InputValidators {
     }
     return null;
   }
+
+  static String? validateConfirmationPassword(
+    String? value,
+    String? password,
+    AppLocalizations localizations,
+  ) {
+    String? validPassword = validatePassword(value, localizations);
+    return validPassword ??
+        (value != password ? localizations.error_password_mismatch : null);
+  }
+
+  static String? validateName(String? value, AppLocalizations localizations) {
+    if (null == value || value.isEmpty) {
+      return localizations.error_value_required;
+    }
+    return null;
+  }
 }

@@ -6,6 +6,7 @@ class PasswordField extends StatefulWidget {
   const PasswordField({
     super.key,
     required this.localizations,
+    required this.labelText,
     this.controller,
     this.validator,
   });
@@ -13,6 +14,7 @@ class PasswordField extends StatefulWidget {
   final AppLocalizations localizations;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
+  final String labelText;
 
   @override
   State<PasswordField> createState() => _PasswordFieldState();
@@ -28,7 +30,7 @@ class _PasswordFieldState extends State<PasswordField> {
       obscureText: !_isPasswordVisible,
       keyboardType: TextInputType.visiblePassword,
       decoration: InputDecoration(
-        labelText: widget.localizations.label_password,
+        labelText: widget.labelText,
         border: const OutlineInputBorder(),
         suffixIcon: IconButton(
           icon: Icon(
