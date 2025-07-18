@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../features/auth/presentation/login_screen.dart';
+import '../../features/auth/presentation/reset_password.dart';
+import '../../features/auth/presentation/signin_screen.dart';
+import '../../features/auth/presentation/signup_screen.dart';
 import '../../features/menu/presentation/menu_screen.dart';
 import '../../features/splash/presentation/splash_screen.dart';
 import '../config/l10n/generated/app_localizations.dart';
@@ -23,6 +25,8 @@ class AppNavigation {
   static const String login = '/login';
   static const String home = '/home';
   static const String menu = '/menu';
+  static const String signUp = '/signUp';
+  static const String resetPassword = '/reset-password';
 
   static final routerConfig = [
     GoRoute(
@@ -45,7 +49,7 @@ class AppNavigation {
       pageBuilder:
           (context, state) => CustomTransitionPage(
             key: state.pageKey,
-            child: LoginScreen(
+            child: SignInScreen(
               localizations: AppLocalizations.of(context),
               appTheme: Theme.of(context),
             ),
@@ -67,6 +71,36 @@ class AppNavigation {
             transitionDuration: const Duration(milliseconds: 500),
             transitionsBuilder:
                 AppTransitions(AppTransitionScreen.home).fadeSlideTransition,
+          ),
+    ),
+    GoRoute(
+      name: signUp,
+      path: signUp,
+      pageBuilder:
+          (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: SignUpScreen(
+              localizations: AppLocalizations.of(context),
+              appTheme: Theme.of(context),
+            ),
+            transitionDuration: const Duration(milliseconds: 800),
+            transitionsBuilder:
+                AppTransitions(AppTransitionScreen.signUp).fadeSlideTransition,
+          ),
+    ),
+    GoRoute(
+      name: resetPassword,
+      path: resetPassword,
+      pageBuilder:
+          (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: ResetPasswword(
+              localizations: AppLocalizations.of(context),
+              appTheme: Theme.of(context),
+            ),
+            transitionDuration: const Duration(milliseconds: 800),
+            transitionsBuilder:
+                AppTransitions(AppTransitionScreen.signUp).fadeSlideTransition,
           ),
     ),
   ];

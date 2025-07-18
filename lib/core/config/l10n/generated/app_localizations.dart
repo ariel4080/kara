@@ -101,11 +101,23 @@ abstract class AppLocalizations {
   /// **'Kara'**
   String get appTitle;
 
-  /// No description provided for @title_login.
+  /// No description provided for @title_sigin.
   ///
   /// In es, this message translates to:
   /// **'Iniciar sesión'**
-  String get title_login;
+  String get title_sigin;
+
+  /// No description provided for @title_signup.
+  ///
+  /// In es, this message translates to:
+  /// **'Registrarse'**
+  String get title_signup;
+
+  /// No description provided for @title_reset_password.
+  ///
+  /// In es, this message translates to:
+  /// **'Restablecer contraseña'**
+  String get title_reset_password;
 
   /// No description provided for @label_email.
   ///
@@ -190,6 +202,48 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'¡Bienvenido a la vista de {label_page} {userName}!'**
   String label_welcome(Object label_page, Object userName);
+
+  /// No description provided for @label_name.
+  ///
+  /// In es, this message translates to:
+  /// **'Nombre'**
+  String get label_name;
+
+  /// No description provided for @label_confirm_password.
+  ///
+  /// In es, this message translates to:
+  /// **'Confirmar contraseña'**
+  String get label_confirm_password;
+
+  /// No description provided for @error_password_mismatch.
+  ///
+  /// In es, this message translates to:
+  /// **'Las contraseñas no coinciden'**
+  String get error_password_mismatch;
+
+  /// No description provided for @error_value_required.
+  ///
+  /// In es, this message translates to:
+  /// **'Este campo es obligatorio'**
+  String get error_value_required;
+
+  /// No description provided for @label_already_have_account.
+  ///
+  /// In es, this message translates to:
+  /// **'¿Ya tienes una cuenta?'**
+  String get label_already_have_account;
+
+  /// No description provided for @label_back.
+  ///
+  /// In es, this message translates to:
+  /// **'Atrás'**
+  String get label_back;
+
+  /// No description provided for @label_msj_reset.
+  ///
+  /// In es, this message translates to:
+  /// **'Password reset email sent to {email}'**
+  String label_msj_reset(Object email);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

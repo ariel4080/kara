@@ -1,7 +1,9 @@
 {
     "@@locale": "en",
     "appTitle": "Kara",
-    "title_login": "Login",
+    "title_sigin": "Sign In",
+    "title_signup": "Sign Up",
+    "title_reset_password": "Reset Password",
     "label_email": "Email",
     "label_password": "Password",
     "label_forgot_password": "Forgot your password?",
@@ -15,5 +17,12 @@
     "label_appointments": "Appointments",
     "label_history": "History",
     "label_settings": "Settings",
-    "label_welcome": "Welcome to the {label_page} View {userName}!"
+    "label_welcome": "Welcome to the {label_page} View {userName}!",
+    "label_name": "Name",
+    "label_confirm_password": "Confirm Password",
+    "error_password_mismatch": "Passwords do not match",
+    "error_value_required": "This field is required",
+    "label_already_have_account": "Already have an account?",
+    "label_back": "Back",
+    "label_msj_reset": "Password reset email sent to {email}"
 }

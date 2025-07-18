@@ -27,6 +27,19 @@ class AuthRepositoryImpl implements AuthRepository {
   ) async => datasource.signInWithEmailAndPassword(email, password);
 
   @override
+  Future<void> signUpWithEmailAndPassword(
+    String name,
+    String email,
+    String password,
+  ) {
+    return datasource.signUpWithEmailAndPassword(name, email, password);
+  }
+
+  @override
+  Future<void> resetPassword(String email) async =>
+      datasource.resetPassword(email);
+
+  @override
   Future<void> signInWithGoogle() async => datasource.signInWithGoogle();
 
   @override

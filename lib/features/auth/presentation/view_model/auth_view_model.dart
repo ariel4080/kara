@@ -52,6 +52,31 @@ class AuthViewModel extends _$AuthViewModel {
     }
   }
 
+  Future<void> signUp(String name, String email, String password) async {
+    state = AsyncValue.data(
+      state.value!.copyWith(isLoadingSignInWithPasword: true),
+    );
+
+    final response = await AsyncValue.guard(
+      () => _authRepository.signUpWithEmailAndPassword(name, email, password),
+    );
+
+    state = AsyncValue.data(
+      state.value!.copyWith(isLoadingSignInWithPasword: false),
+    );
+
+    if (response.hasError) {
+      state = AsyncValue.error(response.error!, StackTrace.current);
+    } else {
+      state = AsyncValue.data(
+        state.value!.copyWith(
+          isLoadingSignInWithPasword: false,
+          user: _authRepository.currentUser,
+        ),
+      );
+    }
+  }
+
   Future<void> logInWithGoogle() async {
     state = AsyncValue.data(
       state.value!.copyWith(isLoadingSignInWithGoogle: true),
@@ -71,6 +96,24 @@ class AuthViewModel extends _$AuthViewModel {
       state = AsyncValue.data(
         state.value!.copyWith(user: _authRepository.currentUser),
       );
+    }
+  }
+
+  Future<void> resetPassword(String email) async {
+    state = AsyncValue.data(
+      state.value!.copyWith(isLoadingSignInWithPasword: true),
+    );
+
+    final response = await AsyncValue.guard(
+      () => _authRepository.resetPassword(email),
+    );
+
+    state = AsyncValue.data(
+      state.value!.copyWith(isLoadingSignInWithPasword: false),
+    );
+
+    if (response.error != null) {
+      state = AsyncValue.error(response.error!, StackTrace.current);
     }
   }
 
