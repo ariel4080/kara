@@ -3,6 +3,7 @@
     "appTitle": "Kara",
     "title_sigin": "Iniciar sesión",
     "title_signup": "Registrarse",
+    "title_signout": "Cerrar sesión",
     "title_reset_password": "Restablecer contraseña",
     "label_email": "Correo electrónico",
     "label_password": "Contraseña",
@@ -24,5 +25,8 @@
     "error_value_required": "Este campo es obligatorio",
     "label_already_have_account": "¿Ya tienes una cuenta?",
     "label_back": "Atrás",
-    "label_msj_reset": "Password reset email sent to {email}"
+    "label_msj_reset": "Password reset email sent to {email}",
+    "label_grettings": "¡Hola",
+    "label_next_appointments": "Mis próximas citas",
+    "label_appointments_count": "{count} citas en total"
 }

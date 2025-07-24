@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:kara/core/config/l10n/generated/app_localizations.dart';
 
 import '../../../../core/navigation/app_navigation.dart';
-import '../../../common/utils/errors.dart';
-import '../view_model/auth_view_model.dart';
+import '../../auth/presentation/view_model/auth_view_model.dart';
+import '../utils/errors.dart';
 
 mixin AuthMixin {
   Future<void> signIn(
@@ -81,6 +81,13 @@ mixin AuthMixin {
         );
         context.pop();
       }
+    }
+  }
+
+  Future<void> logOut(BuildContext context, WidgetRef ref) async {
+    await ref.read(authViewModelProvider.notifier).logOut();
+    if (context.mounted) {
+      context.go(AppNavigation.login);
     }
   }
 }

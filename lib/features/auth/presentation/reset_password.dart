@@ -5,8 +5,8 @@ import 'package:kara/features/common/utils/input_validators.dart';
 
 import '../../../core/config/l10n/generated/app_localizations.dart';
 import '../../../core/navigation/app_navigation.dart';
+import '../../common/mixins/auth_mixin.dart';
 import '../../common/ui/default_button.dart';
-import 'mixins/auth_mixin.dart';
 import 'view_model/auth_view_model.dart';
 import 'widgets/auth_screen.dart';
 
