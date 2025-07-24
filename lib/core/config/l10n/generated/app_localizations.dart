@@ -113,6 +113,12 @@ abstract class AppLocalizations {
   /// **'Registrarse'**
   String get title_signup;
 
+  /// No description provided for @title_signout.
+  ///
+  /// In es, this message translates to:
+  /// **'Cerrar sesión'**
+  String get title_signout;
+
   /// No description provided for @title_reset_password.
   ///
   /// In es, this message translates to:
@@ -244,6 +250,24 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Password reset email sent to {email}'**
   String label_msj_reset(Object email);
+
+  /// No description provided for @label_grettings.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Hola'**
+  String get label_grettings;
+
+  /// No description provided for @label_next_appointments.
+  ///
+  /// In es, this message translates to:
+  /// **'Mis próximas citas'**
+  String get label_next_appointments;
+
+  /// No description provided for @label_appointments_count.
+  ///
+  /// In es, this message translates to:
+  /// **'{count} citas en total'**
+  String label_appointments_count(Object count);
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

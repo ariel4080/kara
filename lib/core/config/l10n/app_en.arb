@@ -3,6 +3,7 @@
     "appTitle": "Kara",
     "title_sigin": "Sign In",
     "title_signup": "Sign Up",
+    "title_signout": "Sign Out",
     "title_reset_password": "Reset Password",
     "label_email": "Email",
     "label_password": "Password",
@@ -24,5 +25,8 @@
     "error_value_required": "This field is required",
     "label_already_have_account": "Already have an account?",
     "label_back": "Back",
-    "label_msj_reset": "Password reset email sent to {email}"
+    "label_msj_reset": "Password reset email sent to {email}",
+    "label_grettings": "¡Hello",
+    "label_next_appointments": "My Appointments",
+    "label_appointments_count": "{count} appointments in total"
 }

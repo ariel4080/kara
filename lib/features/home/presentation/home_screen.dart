@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:kara/features/common/ui/appointments_header.dart';
+import 'package:kara/features/common/ui/default_divider.dart';
 
-import '../../../core/navigation/app_navigation.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
+import '../../common/mixins/auth_mixin.dart';
+import '../../common/ui/appointment_info_card.dart';
+import '../../common/ui/default_app_bar.dart';
 import '../../menu/shared/base_model.dart';
 
-class HomeScreen extends ConsumerWidget with BaseModel {
+class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
   HomeScreen({
     super.key,
     required localizations,
@@ -30,33 +33,71 @@ class HomeScreen extends ConsumerWidget with BaseModel {
     final userName = user?.displayName ?? '';
 
     return Scaffold(
-      backgroundColor: appTheme.primaryColor,
-      appBar: AppBar(
-        title: Text(labelPage),
-        backgroundColor: appTheme.colorScheme.secondary,
-        foregroundColor: appTheme.colorScheme.primary,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.logout),
-            onPressed: () => logOut(context, ref),
+      backgroundColor: appTheme.colorScheme.primary,
+      body: Column(
+        children: [
+          DefaultAppBar(
+            localizations: localizations!,
+            appTheme: appTheme,
+            userName: userName,
+            logOut: () => logOut(context, ref),
+          ),
+          AppointmentsHeader(
+            appTheme: appTheme,
+            title: localizations!.label_next_appointments,
+            subtitle: localizations!.label_appointments_count(5),
+            onAddAppointment: () {
+              // Lógica para agregar una nueva cita
+            },
+          ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 32.0),
+            child: DefaultDivider(
+              color: Color.fromARGB(239, 239, 239, 239),
+              height: 2,
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              padding: const EdgeInsets.only(top: 24),
+              shrinkWrap: true,
+              children: [
+                AppointmentsInfoCard.primary(
+                  title: 'Lunes 23 de Enero 2025',
+                  subtitle: '2:30 pm',
+                  text: 'Dr. Ricardo Arjona',
+                  appTheme: appTheme,
+                  icon: Icons.health_and_safety,
+                ),
+                const SizedBox(height: 20),
+                AppointmentsInfoCard.secondary(
+                  title: 'Lunes 23 de Enero 2025',
+                  subtitle: '2:30 pm',
+                  text: 'Dr. Ricardo Arjona',
+                  appTheme: appTheme,
+                  icon: Icons.pets,
+                ),
+                const SizedBox(height: 20),
+                AppointmentsInfoCard.secondary(
+                  title: 'Lunes 23 de Enero 2025',
+                  subtitle: '2:30 pm',
+                  text: 'Dr. Ricardo Arjona',
+                  appTheme: appTheme,
+                  icon: Icons.real_estate_agent,
+                ),
+                const SizedBox(height: 20),
+                AppointmentsInfoCard.secondary(
+                  title: 'Lunes 23 de Enero 2025',
+                  subtitle: '2:30 pm',
+                  text: 'Dr. Ricardo Arjona',
+                  appTheme: appTheme,
+                  icon: Icons.health_and_safety,
+                ),
+              ],
+            ),
           ),
         ],
       ),
-      body: SafeArea(
-        child: Center(
-          child: Text(
-            localizations!.label_welcome(labelPage, userName),
-            style: appTheme.textTheme.displayLarge,
-          ),
-        ),
-      ),
     );
-  }
-
-  Future<void> logOut(BuildContext context, WidgetRef ref) async {
-    await ref.read(authViewModelProvider.notifier).logOut();
-    if (context.mounted) {
-      context.go(AppNavigation.login);
-    }
   }
 }

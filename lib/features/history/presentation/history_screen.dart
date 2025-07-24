@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
-import '../../../core/navigation/app_navigation.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
+import '../../common/mixins/auth_mixin.dart';
 import '../../menu/shared/base_model.dart';
 
-class HistoryScreen extends ConsumerWidget with BaseModel {
+class HistoryScreen extends ConsumerWidget with BaseModel, AuthMixin {
   HistoryScreen({
     super.key,
     required localizations,
@@ -51,12 +50,5 @@ class HistoryScreen extends ConsumerWidget with BaseModel {
         ),
       ),
     );
-  }
-
-  Future<void> logOut(BuildContext context, WidgetRef ref) async {
-    await ref.read(authViewModelProvider.notifier).logOut();
-    if (context.mounted) {
-      context.go(AppNavigation.login);
-    }
   }
 }

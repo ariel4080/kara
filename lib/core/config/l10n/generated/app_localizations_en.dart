@@ -18,6 +18,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get title_signup => 'Sign Up';
 
   @override
+  String get title_signout => 'Sign Out';
+
+  @override
   String get title_reset_password => 'Reset Password';
 
   @override
@@ -85,5 +88,16 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String label_msj_reset(Object email) {
     return 'Password reset email sent to $email';
+  }
+
+  @override
+  String get label_grettings => '¡Hello';
+
+  @override
+  String get label_next_appointments => 'My Appointments';
+
+  @override
+  String label_appointments_count(Object count) {
+    return '$count appointments in total';
   }
 }
