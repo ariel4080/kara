@@ -35,7 +35,7 @@ class AppointmentsHeader extends StatelessWidget {
                 Text(
                   title,
                   style: TextStyle(
-                    fontSize: 32,
+                    fontSize: 26,
                     color: appTheme.colorScheme.secondary,
                   ),
                 ),
@@ -43,15 +43,15 @@ class AppointmentsHeader extends StatelessWidget {
                 Text(
                   subtitle,
                   style: const TextStyle(
-                    fontSize: 16,
+                    fontSize: 14,
                     color: AppColors.greyDark,
                   ),
                 ),
               ],
             ),
             SizedBox(
-              width: 59,
-              height: 58,
+              width: 55,
+              height: 54,
               child: FloatingActionButton(
                 onPressed: () {},
                 shape: const CircleBorder(),

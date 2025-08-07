@@ -70,7 +70,7 @@ class DefaultAppBar extends StatelessWidget {
                   TextSpan(
                     text: localizations.label_grettings,
                     style: TextStyle(
-                      fontSize: 21,
+                      fontSize: 18,
                       color: appTheme.colorScheme.primary,
                     ),
                     children: [

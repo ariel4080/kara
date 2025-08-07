@@ -268,6 +268,30 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'{count} citas en total'**
   String label_appointments_count(Object count);
+
+  /// No description provided for @title_something_went_wrong.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Ups! Algo salió mal'**
+  String get title_something_went_wrong;
+
+  /// No description provided for @label_status_error.
+  ///
+  /// In es, this message translates to:
+  /// **'Status: {httpStatus} - {errorMessage}'**
+  String label_status_error(Object errorMessage, Object httpStatus);
+
+  /// No description provided for @label_unknow_error.
+  ///
+  /// In es, this message translates to:
+  /// **'Error desconocido'**
+  String get label_unknow_error;
+
+  /// No description provided for @label_retry.
+  ///
+  /// In es, this message translates to:
+  /// **'Reintentar'**
+  String get label_retry;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

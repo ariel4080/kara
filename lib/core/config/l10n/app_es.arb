@@ -28,5 +28,9 @@
     "label_msj_reset": "Password reset email sent to {email}",
     "label_grettings": "¡Hola",
     "label_next_appointments": "Mis próximas citas",
-    "label_appointments_count": "{count} citas en total"
+    "label_appointments_count": "{count} citas en total",
+    "title_something_went_wrong" : "¡Ups! Algo salió mal",
+    "label_status_error": "Status: {httpStatus} - {errorMessage}",
+    "label_unknow_error": "Error desconocido",
+    "label_retry": "Reintentar"
 }
