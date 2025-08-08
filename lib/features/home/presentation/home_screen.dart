@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:kara/features/common/ui/appointments_header.dart';
-import 'package:kara/features/common/ui/default_divider.dart';
+import 'package:kara/features/home/presentation/widgets/appointments_list.dart';
 
+import '../../../core/networking/api_response.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
 import '../../common/mixins/auth_mixin.dart';
-import '../../common/ui/appointment_info_card.dart';
+import '../../common/ui/appointments_header.dart';
 import '../../common/ui/default_app_bar.dart';
+import '../../common/ui/default_divider.dart';
 import '../../menu/shared/base_model.dart';
+import 'view_model/appointments_view_model.dart';
+import 'widgets/appointments_error.dart';
 
 class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
   HomeScreen({
@@ -32,6 +35,12 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
     final user = ref.watch(authViewModelProvider).value?.user;
     final userName = user?.displayName ?? '';
 
+    final appointmentsList = ref.watch(getAppointmentsProvider);
+    final int totalAppointments =
+        appointmentsList.hasValue && !appointmentsList.hasError
+            ? appointmentsList.value!.length
+            : 0;
+
     return Scaffold(
       backgroundColor: appTheme.colorScheme.primary,
       body: Column(
@@ -45,7 +54,9 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
           AppointmentsHeader(
             appTheme: appTheme,
             title: localizations!.label_next_appointments,
-            subtitle: localizations!.label_appointments_count(5),
+            subtitle: localizations!.label_appointments_count(
+              totalAppointments,
+            ),
             onAddAppointment: () {
               // Lógica para agregar una nueva cita
             },
@@ -57,44 +68,32 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
               height: 2,
             ),
           ),
-          Expanded(
-            child: ListView(
-              padding: const EdgeInsets.only(top: 24),
-              shrinkWrap: true,
-              children: [
-                AppointmentsInfoCard.primary(
-                  title: 'Lunes 23 de Enero 2025',
-                  subtitle: '2:30 pm',
-                  text: 'Dr. Ricardo Arjona',
-                  appTheme: appTheme,
-                  icon: Icons.health_and_safety,
+          appointmentsList.when(
+            data: (appointments) {
+              return AppointmentsList(
+                appTheme: appTheme,
+                localizations: localizations!,
+                appointments: appointments,
+              );
+            },
+            error: (error, stack) {
+              return AppointmentsError(
+                localizations: localizations!,
+                appTheme: appTheme,
+                errorResponse: error as ErrorApiResponse,
+                isLoading: appointmentsList.isLoading,
+                onRetry: () => ref.refresh(getAppointmentsProvider),
+              );
+            },
+            loading:
+                () => Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: appTheme.colorScheme.secondary,
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 20),
-                AppointmentsInfoCard.secondary(
-                  title: 'Lunes 23 de Enero 2025',
-                  subtitle: '2:30 pm',
-                  text: 'Dr. Ricardo Arjona',
-                  appTheme: appTheme,
-                  icon: Icons.pets,
-                ),
-                const SizedBox(height: 20),
-                AppointmentsInfoCard.secondary(
-                  title: 'Lunes 23 de Enero 2025',
-                  subtitle: '2:30 pm',
-                  text: 'Dr. Ricardo Arjona',
-                  appTheme: appTheme,
-                  icon: Icons.real_estate_agent,
-                ),
-                const SizedBox(height: 20),
-                AppointmentsInfoCard.secondary(
-                  title: 'Lunes 23 de Enero 2025',
-                  subtitle: '2:30 pm',
-                  text: 'Dr. Ricardo Arjona',
-                  appTheme: appTheme,
-                  icon: Icons.health_and_safety,
-                ),
-              ],
-            ),
           ),
         ],
       ),

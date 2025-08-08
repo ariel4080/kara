@@ -100,4 +100,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String label_appointments_count(Object count) {
     return '$count appointments in total';
   }
+
+  @override
+  String get title_something_went_wrong => 'Oops! Something went wrong';
+
+  @override
+  String label_status_error(Object errorMessage, Object httpStatus) {
+    return 'Status: $httpStatus - $errorMessage';
+  }
+
+  @override
+  String get label_unknow_error => 'Unknown Error';
+
+  @override
+  String get label_retry => 'Retry';
 }

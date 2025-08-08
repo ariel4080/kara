@@ -49,7 +49,7 @@ class AppointmentsInfoCard extends StatelessWidget {
           isPrimary ? appTheme.colorScheme.primary : AppColors.greyDark,
       margin: const EdgeInsets.symmetric(horizontal: 32.0),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 22.0),
+        padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -60,7 +60,7 @@ class AppointmentsInfoCard extends StatelessWidget {
                   title,
                   style: TextStyle(
                     color: appTheme.colorScheme.tertiary,
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -68,20 +68,20 @@ class AppointmentsInfoCard extends StatelessWidget {
                   subtitle,
                   style: TextStyle(
                     color: appTheme.colorScheme.tertiary,
-                    fontSize: 16,
+                    fontSize: 14,
                   ),
                 ),
                 Text(
                   text,
                   style: TextStyle(
                     color: appTheme.colorScheme.tertiary,
-                    fontSize: 16,
+                    fontSize: 14,
                   ),
                 ),
               ],
             ),
             CircleAvatar(
-              maxRadius: 28,
+              maxRadius: 26,
               backgroundColor: const Color.fromARGB(
                 23,
                 8,
@@ -91,7 +91,7 @@ class AppointmentsInfoCard extends StatelessWidget {
               child: Icon(
                 icon,
                 color: appTheme.colorScheme.secondary,
-                size: 30,
+                size: 28,
               ),
             ),
           ],
