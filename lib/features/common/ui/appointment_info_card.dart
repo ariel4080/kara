@@ -40,62 +40,76 @@ class AppointmentsInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: appTheme.colorScheme.primary,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
-      shadowColor: isPrimary ? const Color.fromARGB(255, 89, 15, 201) : null,
-      elevation: isPrimary ? 3.0 : null,
-      surfaceTintColor:
-          isPrimary ? appTheme.colorScheme.primary : AppColors.greyDark,
-      margin: const EdgeInsets.symmetric(horizontal: 32.0),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+    return Material(
+      color: Colors.transparent,
+      borderRadius: BorderRadius.circular(20.0),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20.0),
+        child: Card(
+          color: appTheme.colorScheme.primary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          shadowColor:
+              isPrimary ? const Color.fromARGB(255, 89, 15, 201) : null,
+          elevation: isPrimary ? 3.0 : null,
+          surfaceTintColor:
+              isPrimary ? appTheme.colorScheme.primary : AppColors.greyDark,
+          margin: const EdgeInsets.symmetric(horizontal: 32.0),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 30.0,
+              vertical: 20.0,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: appTheme.colorScheme.tertiary,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold,
-                  ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: TextStyle(
+                        color: appTheme.colorScheme.tertiary,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: appTheme.colorScheme.tertiary,
+                        fontSize: 14,
+                      ),
+                    ),
+                    Text(
+                      text,
+                      style: TextStyle(
+                        color: appTheme.colorScheme.tertiary,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  subtitle,
-                  style: TextStyle(
-                    color: appTheme.colorScheme.tertiary,
-                    fontSize: 14,
-                  ),
-                ),
-                Text(
-                  text,
-                  style: TextStyle(
-                    color: appTheme.colorScheme.tertiary,
-                    fontSize: 14,
+                CircleAvatar(
+                  maxRadius: 26,
+                  backgroundColor: const Color.fromARGB(
+                    23,
+                    8,
+                    0,
+                    165,
+                  ), //rgba(243, 241, 255, 1)
+                  child: Icon(
+                    icon,
+                    color: appTheme.colorScheme.secondary,
+                    size: 28,
                   ),
                 ),
               ],
             ),
-            CircleAvatar(
-              maxRadius: 26,
-              backgroundColor: const Color.fromARGB(
-                23,
-                8,
-                0,
-                165,
-              ), //rgba(243, 241, 255, 1)
-              child: Icon(
-                icon,
-                color: appTheme.colorScheme.secondary,
-                size: 28,
-              ),
-            ),
-          ],
+          ),
         ),
+        onTap: () {},
       ),
     );
   }

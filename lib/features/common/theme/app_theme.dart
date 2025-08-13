@@ -5,15 +5,13 @@ import 'app_colors.dart';
 class AppTheme {
   static ThemeData get theme {
     return ThemeData(
-      splashFactory: NoSplash.splashFactory,
-      highlightColor: Colors.transparent,
-      splashColor: AppColors.blue,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       colorScheme: ColorScheme.fromSeed(
         seedColor: AppColors.blue,
         primary: AppColors.white,
         secondary: AppColors.blue,
         tertiary: AppColors.black,
+        surface: AppColors.greyLight,
       ),
       textTheme: const TextTheme(
         displayLarge: TextStyle(
@@ -53,6 +51,11 @@ class AppTheme {
           fontFamily: 'Roboto',
         ),
         showCloseIcon: true,
+      ),
+      listTileTheme: const ListTileThemeData(
+        iconColor: AppColors.blue,
+        textColor: AppColors.black,
+        contentPadding: EdgeInsets.symmetric(horizontal: 6),
       ),
     );
   }

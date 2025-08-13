@@ -27,17 +27,17 @@ class AppointmentsList extends StatelessWidget {
           final AppointmentsEntity appointment = appointments[index];
           if (index == 0) {
             return AppointmentsInfoCard.primary(
-              title: appointment.date,
-              subtitle: appointment.time,
-              text: appointment.service.name,
+              title: appointment.service.name,
+              subtitle: appointment.date,
+              text: appointment.time,
               appTheme: appTheme,
               icon: appointment.service.icon,
             );
           } else {
             return AppointmentsInfoCard.secondary(
-              title: appointment.date,
-              subtitle: appointment.time,
-              text: appointment.service.name,
+              title: appointment.service.name,
+              subtitle: appointment.date,
+              text: appointment.time,
               appTheme: appTheme,
               icon: appointment.service.icon,
             );

@@ -28,7 +28,7 @@ class SplashScreen extends ConsumerWidget {
     });
 
     return Scaffold(
-      backgroundColor: appTheme.splashColor,
+      backgroundColor: appTheme.colorScheme.secondary,
       body: Center(
         child: Text(
           localizations!.appTitle,

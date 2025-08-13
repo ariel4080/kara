@@ -185,11 +185,11 @@ abstract class AppLocalizations {
   /// **'Inicio'**
   String get label_home;
 
-  /// No description provided for @label_appointments.
+  /// No description provided for @label_promotions.
   ///
   /// In es, this message translates to:
-  /// **'Citas'**
-  String get label_appointments;
+  /// **'Promociones'**
+  String get label_promotions;
 
   /// No description provided for @label_history.
   ///
@@ -292,6 +292,138 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Reintentar'**
   String get label_retry;
+
+  /// No description provided for @label_search_settings.
+  ///
+  /// In es, this message translates to:
+  /// **'Buscar configuración'**
+  String get label_search_settings;
+
+  /// No description provided for @label_app_preferences.
+  ///
+  /// In es, this message translates to:
+  /// **'Preferencias de la aplicación'**
+  String get label_app_preferences;
+
+  /// No description provided for @label_profile.
+  ///
+  /// In es, this message translates to:
+  /// **'Perfil'**
+  String get label_profile;
+
+  /// No description provided for @label_notifications.
+  ///
+  /// In es, this message translates to:
+  /// **'Notificaciones'**
+  String get label_notifications;
+
+  /// No description provided for @label_means_of_payment.
+  ///
+  /// In es, this message translates to:
+  /// **'Medios de pago'**
+  String get label_means_of_payment;
+
+  /// No description provided for @label_theme.
+  ///
+  /// In es, this message translates to:
+  /// **'Tema'**
+  String get label_theme;
+
+  /// No description provided for @label_language.
+  ///
+  /// In es, this message translates to:
+  /// **'Idioma'**
+  String get label_language;
+
+  /// No description provided for @label_help_and_support.
+  ///
+  /// In es, this message translates to:
+  /// **'Soporte y ayuda'**
+  String get label_help_and_support;
+
+  /// No description provided for @label_help_center.
+  ///
+  /// In es, this message translates to:
+  /// **'Centro de ayuda'**
+  String get label_help_center;
+
+  /// No description provided for @label_frequently_asked_questions.
+  ///
+  /// In es, this message translates to:
+  /// **'Preguntas frecuentes'**
+  String get label_frequently_asked_questions;
+
+  /// No description provided for @label_tutorials.
+  ///
+  /// In es, this message translates to:
+  /// **'Tutoriales'**
+  String get label_tutorials;
+
+  /// No description provided for @label_other_settings.
+  ///
+  /// In es, this message translates to:
+  /// **'Otras configuraciones'**
+  String get label_other_settings;
+
+  /// No description provided for @label_privacy_policy.
+  ///
+  /// In es, this message translates to:
+  /// **'Política de privacidad'**
+  String get label_privacy_policy;
+
+  /// No description provided for @label_terms_of_service.
+  ///
+  /// In es, this message translates to:
+  /// **'Términos de servicio'**
+  String get label_terms_of_service;
+
+  /// No description provided for @label_share_with_friends.
+  ///
+  /// In es, this message translates to:
+  /// **'Compartir con amigos'**
+  String get label_share_with_friends;
+
+  /// No description provided for @label_rate_us.
+  ///
+  /// In es, this message translates to:
+  /// **'Califícanos'**
+  String get label_rate_us;
+
+  /// No description provided for @label_about_us.
+  ///
+  /// In es, this message translates to:
+  /// **'Acerca de nosotros'**
+  String get label_about_us;
+
+  /// No description provided for @label_version.
+  ///
+  /// In es, this message translates to:
+  /// **'Versión: {version}'**
+  String label_version(Object version);
+
+  /// No description provided for @label_screen_under_construction.
+  ///
+  /// In es, this message translates to:
+  /// **'Esta pantalla está en construcción'**
+  String get label_screen_under_construction;
+
+  /// No description provided for @label_we_are_working.
+  ///
+  /// In es, this message translates to:
+  /// **'Estamos trabajando arduamente para traerte esta función'**
+  String get label_we_are_working;
+
+  /// No description provided for @label_you_have_no_appointments.
+  ///
+  /// In es, this message translates to:
+  /// **'¡Aún no tienes citas registradas!'**
+  String get label_you_have_no_appointments;
+
+  /// No description provided for @label_add_appointment.
+  ///
+  /// In es, this message translates to:
+  /// **'Haz tap en el botón de \'+\' para agregar una cita.'**
+  String get label_add_appointment;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
