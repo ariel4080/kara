@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kara/core/config/l10n/generated/app_localizations.dart';
 
 import '../../../../core/networking/api_response.dart';
+import '../../../common/assets.dart';
 import '../../../common/ui/ghost_button.dart';
 
 class AppointmentsError extends StatelessWidget {
@@ -29,14 +30,11 @@ class AppointmentsError extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(
-                Icons.error_outline,
-                size: 64,
-                color: Colors.redAccent,
-              ),
+              Image.asset(AppAssets.whatIcon, width: 200, height: 200),
               const SizedBox(height: 16),
               Text(
                 localizations.title_something_went_wrong,
+                textAlign: TextAlign.center,
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,

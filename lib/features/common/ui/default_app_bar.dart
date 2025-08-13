@@ -48,7 +48,7 @@ class DefaultAppBar extends StatelessWidget {
                     localizations.title_signout,
                     style: TextStyle(
                       color: appTheme.colorScheme.primary,
-                      fontSize: 17,
+                      fontSize: 15,
                     ),
                   ),
                   icon: Icon(

@@ -54,7 +54,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get label_home => 'Inicio';
 
   @override
-  String get label_appointments => 'Citas';
+  String get label_promotions => 'Promociones';
 
   @override
   String get label_history => 'Historial';
@@ -114,4 +114,72 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get label_retry => 'Reintentar';
+
+  @override
+  String get label_search_settings => 'Buscar configuración';
+
+  @override
+  String get label_app_preferences => 'Preferencias de la aplicación';
+
+  @override
+  String get label_profile => 'Perfil';
+
+  @override
+  String get label_notifications => 'Notificaciones';
+
+  @override
+  String get label_means_of_payment => 'Medios de pago';
+
+  @override
+  String get label_theme => 'Tema';
+
+  @override
+  String get label_language => 'Idioma';
+
+  @override
+  String get label_help_and_support => 'Soporte y ayuda';
+
+  @override
+  String get label_help_center => 'Centro de ayuda';
+
+  @override
+  String get label_frequently_asked_questions => 'Preguntas frecuentes';
+
+  @override
+  String get label_tutorials => 'Tutoriales';
+
+  @override
+  String get label_other_settings => 'Otras configuraciones';
+
+  @override
+  String get label_privacy_policy => 'Política de privacidad';
+
+  @override
+  String get label_terms_of_service => 'Términos de servicio';
+
+  @override
+  String get label_share_with_friends => 'Compartir con amigos';
+
+  @override
+  String get label_rate_us => 'Califícanos';
+
+  @override
+  String get label_about_us => 'Acerca de nosotros';
+
+  @override
+  String label_version(Object version) {
+    return 'Versión: $version';
+  }
+
+  @override
+  String get label_screen_under_construction => 'Esta pantalla está en construcción';
+
+  @override
+  String get label_we_are_working => 'Estamos trabajando arduamente para traerte esta función';
+
+  @override
+  String get label_you_have_no_appointments => '¡Aún no tienes citas registradas!';
+
+  @override
+  String get label_add_appointment => 'Haz tap en el botón de \'+\' para agregar una cita.';
 }

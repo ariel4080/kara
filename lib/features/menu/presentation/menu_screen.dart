@@ -23,7 +23,12 @@ class _MenuScreenState extends State<MenuScreen> {
   void initState() {
     super.initState();
     pageController = PageController(initialPage: _selectedPageIndex);
-    pages = pageBuilder(widget.localizations, widget.appTheme, pageController);
+    pages = pageBuilder(
+      widget.localizations,
+      widget.appTheme,
+      pageController,
+      changePage,
+    );
   }
 
   @override

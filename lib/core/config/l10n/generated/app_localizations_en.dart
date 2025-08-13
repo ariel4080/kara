@@ -54,7 +54,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get label_home => 'Home';
 
   @override
-  String get label_appointments => 'Appointments';
+  String get label_promotions => 'Promotions';
 
   @override
   String get label_history => 'History';
@@ -114,4 +114,72 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get label_retry => 'Retry';
+
+  @override
+  String get label_search_settings => 'Search Settings';
+
+  @override
+  String get label_app_preferences => 'App Preferences';
+
+  @override
+  String get label_profile => 'Profile';
+
+  @override
+  String get label_notifications => 'Notifications';
+
+  @override
+  String get label_means_of_payment => 'Means of Payment';
+
+  @override
+  String get label_theme => 'Theme';
+
+  @override
+  String get label_language => 'Language';
+
+  @override
+  String get label_help_and_support => 'Support and Help';
+
+  @override
+  String get label_help_center => 'Help Center';
+
+  @override
+  String get label_frequently_asked_questions => 'Frequently Asked Questions';
+
+  @override
+  String get label_tutorials => 'Tutorials';
+
+  @override
+  String get label_other_settings => 'Other Settings';
+
+  @override
+  String get label_privacy_policy => 'Privacy Policy';
+
+  @override
+  String get label_terms_of_service => 'Terms of Service';
+
+  @override
+  String get label_share_with_friends => 'Share with Friends';
+
+  @override
+  String get label_rate_us => 'Rate Us';
+
+  @override
+  String get label_about_us => 'About Us';
+
+  @override
+  String label_version(Object version) {
+    return 'Version: $version';
+  }
+
+  @override
+  String get label_screen_under_construction => 'This screen is under construction';
+
+  @override
+  String get label_we_are_working => 'We are working hard to bring you this feature';
+
+  @override
+  String get label_you_have_no_appointments => 'You have no appointments registered yet!';
+
+  @override
+  String get label_add_appointment => 'Tap the \'+\' button to add an appointment.';
 }

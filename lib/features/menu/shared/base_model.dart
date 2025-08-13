@@ -8,6 +8,7 @@ mixin BaseModel {
   late final String labelPage;
   late final IconData icon;
   late final PageController pageController;
+  late final void Function(int index) changePage;
 
   void initializeBaseProperties({
     required localizations,
@@ -15,11 +16,13 @@ mixin BaseModel {
     required labelPage,
     required icon,
     required pageController,
+    required changePage,
   }) {
     this.localizations = localizations;
     this.appTheme = appTheme;
     this.labelPage = labelPage;
     this.icon = icon;
     this.pageController = pageController;
+    this.changePage = changePage;
   }
 }

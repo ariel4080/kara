@@ -11,6 +11,8 @@ import '../../common/ui/default_divider.dart';
 import '../../menu/shared/base_model.dart';
 import 'view_model/appointments_view_model.dart';
 import 'widgets/appointments_error.dart';
+import 'widgets/appointments_list_empty.dart';
+import 'widgets/appointments_skeleton.dart';
 
 class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
   HomeScreen({
@@ -20,6 +22,7 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
     required labelPage,
     required icon,
     required pageController,
+    required changePage,
   }) {
     initializeBaseProperties(
       localizations: localizations,
@@ -27,6 +30,7 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
       labelPage: labelPage,
       icon: icon,
       pageController: pageController,
+      changePage: changePage,
     );
   }
 
@@ -69,31 +73,27 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
             ),
           ),
           appointmentsList.when(
-            data: (appointments) {
-              return AppointmentsList(
-                appTheme: appTheme,
-                localizations: localizations!,
-                appointments: appointments,
-              );
-            },
-            error: (error, stack) {
-              return AppointmentsError(
-                localizations: localizations!,
-                appTheme: appTheme,
-                errorResponse: error as ErrorApiResponse,
-                isLoading: appointmentsList.isLoading,
-                onRetry: () => ref.refresh(getAppointmentsProvider),
-              );
-            },
-            loading:
-                () => Expanded(
-                  child: Center(
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: appTheme.colorScheme.secondary,
-                    ),
-                  ),
+            data:
+                (appointments) =>
+                    appointments.isEmpty
+                        ? AppointmentsListEmpty(
+                          localizations: localizations!,
+                          appTheme: appTheme,
+                        )
+                        : AppointmentsList(
+                          appTheme: appTheme,
+                          localizations: localizations!,
+                          appointments: appointments,
+                        ),
+            error:
+                (error, stack) => AppointmentsError(
+                  localizations: localizations!,
+                  appTheme: appTheme,
+                  errorResponse: error as ErrorApiResponse,
+                  isLoading: appointmentsList.isLoading,
+                  onRetry: () => ref.refresh(getAppointmentsProvider),
                 ),
+            loading: () => const AppointmentsSkeleton(),
           ),
         ],
       ),
