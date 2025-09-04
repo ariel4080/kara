@@ -54,5 +54,12 @@
     "label_screen_under_construction": "Esta pantalla está en construcción",
     "label_we_are_working": "Estamos trabajando arduamente para traerte esta función",
     "label_you_have_no_appointments": "¡Aún no tienes citas registradas!",
-    "label_add_appointment": "Haz tap en el botón de '+' para agregar una cita."
+    "label_add_appointment": "Haz tap en el botón de '+' para agregar una cita.",
+    "label_add_booking": "Agenda tu espacio",
+    "label_select_service": "Selecciona el tipo de servicio",
+    "label_multiple_services": "Puedes elegir hasta 3 citas",
+    "label_next": "Siguiente",
+    "label_service_duration": "Duracion: {time} minutos",
+    "label_service_price": "Precio: "
+
 }

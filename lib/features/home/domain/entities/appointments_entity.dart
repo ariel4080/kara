@@ -51,7 +51,27 @@ enum ServiceIcon {
   straighten(Icons.straighten),
   dry_cleaning(Icons.dry_cleaning),
   content_cut(Icons.content_cut),
-  service(Icons.miscellaneous_services);
+  service(Icons.miscellaneous_services),
+  format_color_fill(Icons.format_color_fill),
+  brush(Icons.brush),
+  spa(Icons.spa),
+  fitness_center(Icons.fitness_center),
+  manicure(Icons.handyman),
+  pedicure(Icons.pedal_bike),
+  massage(Icons.self_improvement),
+  yoga(Icons.accessibility_new),
+  barber_shop(Icons.person),
+  nail_salon(Icons.star),
+  beauty_salon(Icons.face_retouching_natural),
+  hair_icons(Icons.auto_fix_high),
+  wellness(Icons.health_and_safety),
+  therapy(Icons.psychology),
+  consultation(Icons.chat),
+  body(Icons.accessibility),
+  auto_awesome(Icons.auto_awesome),
+  cleaning_services(Icons.cleaning_services),
+  handshake(Icons.handshake),
+  self_improvement(Icons.self_improvement);
 
   final IconData icon;
 

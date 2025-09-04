@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kara/features/home/presentation/widgets/appointments_list.dart';
 
+import '../../../core/navigation/app_navigation.dart';
 import '../../../core/networking/api_response.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
 import '../../common/mixins/auth_mixin.dart';
@@ -61,9 +63,7 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
             subtitle: localizations!.label_appointments_count(
               totalAppointments,
             ),
-            onAddAppointment: () {
-              // Lógica para agregar una nueva cita
-            },
+            onAddAppointment: () => context.push(AppNavigation.booking),
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),

@@ -5,6 +5,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../features/auth/presentation/reset_password.dart';
 import '../../features/auth/presentation/signin_screen.dart';
 import '../../features/auth/presentation/signup_screen.dart';
+import '../../features/booking/presentation/widgets/booking_base.dart';
 import '../../features/menu/presentation/menu_screen.dart';
 import '../../features/splash/presentation/splash_screen.dart';
 import '../config/l10n/generated/app_localizations.dart';
@@ -27,6 +28,7 @@ class AppNavigation {
   static const String menu = '/menu';
   static const String signUp = '/signUp';
   static const String resetPassword = '/reset-password';
+  static const String booking = '/booking';
 
   static final routerConfig = [
     GoRoute(
@@ -101,6 +103,23 @@ class AppNavigation {
             transitionDuration: const Duration(milliseconds: 800),
             transitionsBuilder:
                 AppTransitions(AppTransitionScreen.signUp).fadeSlideTransition,
+          ),
+    ),
+    GoRoute(
+      name: booking,
+      path: booking,
+      pageBuilder:
+          (context, state) => CustomTransitionPage(
+            key: state.pageKey,
+            child: BookingBase(
+              localizations: AppLocalizations.of(context),
+              appTheme: Theme.of(context),
+              currentStep: 0,
+              steps: 4,
+            ),
+            transitionDuration: const Duration(milliseconds: 800),
+            transitionsBuilder:
+                AppTransitions(AppTransitionScreen.splash).fadeSlideTransition,
           ),
     ),
   ];
