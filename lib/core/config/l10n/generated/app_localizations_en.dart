@@ -182,4 +182,24 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get label_add_appointment => 'Tap the \'+\' button to add an appointment.';
+
+  @override
+  String get label_add_booking => 'Book your space';
+
+  @override
+  String get label_select_service => 'Select the type of service';
+
+  @override
+  String get label_multiple_services => 'You can choose up to 3 services';
+
+  @override
+  String get label_next => 'Next';
+
+  @override
+  String label_service_duration(Object time) {
+    return 'Duration: $time minutes';
+  }
+
+  @override
+  String get label_service_price => 'Price: ';
 }

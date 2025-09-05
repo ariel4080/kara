@@ -182,4 +182,24 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get label_add_appointment => 'Haz tap en el botón de \'+\' para agregar una cita.';
+
+  @override
+  String get label_add_booking => 'Agenda tu espacio';
+
+  @override
+  String get label_select_service => 'Selecciona el tipo de servicio';
+
+  @override
+  String get label_multiple_services => 'Puedes elegir hasta 3 citas';
+
+  @override
+  String get label_next => 'Siguiente';
+
+  @override
+  String label_service_duration(Object time) {
+    return 'Duracion: $time minutos';
+  }
+
+  @override
+  String get label_service_price => 'Precio: ';
 }

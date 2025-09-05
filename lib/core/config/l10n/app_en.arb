@@ -54,5 +54,11 @@
     "label_screen_under_construction": "This screen is under construction",
     "label_we_are_working": "We are working hard to bring you this feature",
     "label_you_have_no_appointments": "You have no appointments registered yet!",
-    "label_add_appointment": "Tap the '+' button to add an appointment."
+    "label_add_appointment": "Tap the '+' button to add an appointment.",
+    "label_add_booking": "Book your space",
+    "label_select_service": "Select the type of service",
+    "label_multiple_services": "You can choose up to 3 services",
+    "label_next": "Next",
+    "label_service_duration": "Duration: {time} minutes",
+    "label_service_price": "Price: "
 }

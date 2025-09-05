@@ -53,7 +53,7 @@ class AppointmentsHeader extends StatelessWidget {
               width: 55,
               height: 54,
               child: FloatingActionButton(
-                onPressed: () {},
+                onPressed: onAddAppointment,
                 shape: const CircleBorder(),
                 backgroundColor: appTheme.colorScheme.secondary,
                 child: Icon(

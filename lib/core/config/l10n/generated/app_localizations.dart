@@ -424,6 +424,42 @@ abstract class AppLocalizations {
   /// In es, this message translates to:
   /// **'Haz tap en el botón de \'+\' para agregar una cita.'**
   String get label_add_appointment;
+
+  /// No description provided for @label_add_booking.
+  ///
+  /// In es, this message translates to:
+  /// **'Agenda tu espacio'**
+  String get label_add_booking;
+
+  /// No description provided for @label_select_service.
+  ///
+  /// In es, this message translates to:
+  /// **'Selecciona el tipo de servicio'**
+  String get label_select_service;
+
+  /// No description provided for @label_multiple_services.
+  ///
+  /// In es, this message translates to:
+  /// **'Puedes elegir hasta 3 citas'**
+  String get label_multiple_services;
+
+  /// No description provided for @label_next.
+  ///
+  /// In es, this message translates to:
+  /// **'Siguiente'**
+  String get label_next;
+
+  /// No description provided for @label_service_duration.
+  ///
+  /// In es, this message translates to:
+  /// **'Duracion: {time} minutos'**
+  String label_service_duration(Object time);
+
+  /// No description provided for @label_service_price.
+  ///
+  /// In es, this message translates to:
+  /// **'Precio: '**
+  String get label_service_price;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
