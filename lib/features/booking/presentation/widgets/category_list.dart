@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/config/l10n/generated/app_localizations.dart';
 import '../../domain/entities/service_category_entity.dart';
+import '../view_model/booking_view_model.dart';
 import 'category_card.dart';
 
-class CategoryList extends StatefulWidget {
-  final List<ServiceCategoryEntity> categories;
-  final void Function(List<ServiceCategoryEntity> selectedList)
-  onCategorySelected;
+class CategoryList extends ConsumerStatefulWidget {
   final AppLocalizations localizations;
 
-  const CategoryList({
-    super.key,
-    required this.onCategorySelected,
-    required this.categories,
-    required this.localizations,
-  });
+  const CategoryList({super.key, required this.localizations});
 
   @override
-  State<CategoryList> createState() => _CategoryListState();
+  ConsumerState<CategoryList> createState() => _CategoryListState();
 }
 
-class _CategoryListState extends State<CategoryList> {
-  final List<ServiceCategoryEntity> _selectedCategories = [];
-
+class _CategoryListState extends ConsumerState<CategoryList> {
   @override
   Widget build(BuildContext context) {
+    final AsyncValue<BookingState> bookingStateValue = ref.watch(
+      bookingViewModelProvider,
+    );
+
+    final List<ServiceCategoryEntity> categories =
+        bookingStateValue.value?.categories ?? [];
+    final List<ServiceCategoryEntity> selectedCategories =
+        bookingStateValue.value?.categoriesSelected ?? [];
+
     return Expanded(
       child: ShaderMask(
         shaderCallback: (Rect bounds) {
@@ -44,11 +45,11 @@ class _CategoryListState extends State<CategoryList> {
         blendMode: BlendMode.dstOut,
         child: ListView.separated(
           padding: const EdgeInsets.only(top: 26),
-          itemCount: widget.categories.length,
+          itemCount: categories.length,
           separatorBuilder: (context, index) => const SizedBox(height: 4),
           itemBuilder: (context, index) {
-            final ServiceCategoryEntity category = widget.categories[index];
-            final bool isSelected = _selectedCategories.contains(category);
+            final ServiceCategoryEntity category = categories[index];
+            final bool isSelected = selectedCategories.contains(category);
             return CategoryCard(
               localizations: widget.localizations,
               title: category.name,
@@ -61,14 +62,17 @@ class _CategoryListState extends State<CategoryList> {
               onTap: (bool isSelected) {
                 setState(() {
                   if (isSelected) {
-                    _selectedCategories.add(category);
+                    ref
+                        .read(bookingViewModelProvider.notifier)
+                        .addCategory(category);
                   } else {
-                    _selectedCategories.remove(category);
+                    ref
+                        .read(bookingViewModelProvider.notifier)
+                        .removeCategory(category);
                   }
                 });
-                widget.onCategorySelected(_selectedCategories);
               },
-              enableTap: _selectedCategories.length < 3,
+              enableTap: selectedCategories.length < 3,
             );
           },
         ),

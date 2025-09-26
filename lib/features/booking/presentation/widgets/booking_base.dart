@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:kara/features/booking/presentation/view_model/booking_view_model.dart';
 import 'package:kara/features/common/ui/contruction_message_screen.dart';
 
 import '../../../../core/config/l10n/generated/app_localizations.dart';
 import '../booking_first_step_screen.dart';
-import '../view_model/booking_view_model.dart';
 import 'step_progress.dart';
 
 class BookingBase extends ConsumerStatefulWidget {
@@ -50,7 +50,7 @@ class _AppointmentBookingScreenState extends ConsumerState<BookingBase> {
           onPressed: () {
             if (_currentStep == 0) {
               context.pop();
-              ref.invalidate(getCategoriesProvider);
+              ref.invalidate(bookingViewModelProvider);
             } else {
               _pageController.previousPage(
                 duration: const Duration(milliseconds: 1000),
