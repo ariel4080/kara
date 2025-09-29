@@ -6,6 +6,7 @@ import 'package:kara/features/home/presentation/widgets/appointments_list.dart';
 import '../../../core/navigation/app_navigation.dart';
 import '../../../core/networking/api_response.dart';
 import '../../auth/presentation/view_model/auth_view_model.dart';
+import '../../booking/presentation/view_model/booking_view_model.dart';
 import '../../common/mixins/auth_mixin.dart';
 import '../../common/ui/appointments_header.dart';
 import '../../common/ui/default_app_bar.dart';
@@ -63,7 +64,10 @@ class HomeScreen extends ConsumerWidget with BaseModel, AuthMixin {
             subtitle: localizations!.label_appointments_count(
               totalAppointments,
             ),
-            onAddAppointment: () => context.push(AppNavigation.booking),
+            onAddAppointment: () {
+              context.push(AppNavigation.booking);
+              ref.read(bookingViewModelProvider.notifier).fetchCategories();
+            },
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 32.0),
