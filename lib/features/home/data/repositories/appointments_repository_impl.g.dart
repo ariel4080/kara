@@ -6,25 +6,53 @@ part of 'appointments_repository_impl.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(appointmentsRepository)
+final appointmentsRepositoryProvider = AppointmentsRepositoryProvider._();
+
+final class AppointmentsRepositoryProvider
+    extends
+        $FunctionalProvider<
+          AppointmentsRepository,
+          AppointmentsRepository,
+          AppointmentsRepository
+        >
+    with $Provider<AppointmentsRepository> {
+  AppointmentsRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'appointmentsRepositoryProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$appointmentsRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<AppointmentsRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  AppointmentsRepository create(Ref ref) {
+    return appointmentsRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(AppointmentsRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<AppointmentsRepository>(value),
+    );
+  }
+}
+
 String _$appointmentsRepositoryHash() =>
     r'44b0f5ff9c649801883c9ccd0f37cadcf3d79b6e';
-
-/// See also [appointmentsRepository].
-@ProviderFor(appointmentsRepository)
-final appointmentsRepositoryProvider =
-    AutoDisposeProvider<AppointmentsRepository>.internal(
-  appointmentsRepository,
-  name: r'appointmentsRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$appointmentsRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef AppointmentsRepositoryRef
-    = AutoDisposeProviderRef<AppointmentsRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

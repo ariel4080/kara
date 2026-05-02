@@ -4,7 +4,7 @@ part 'error_dto.freezed.dart';
 part 'error_dto.g.dart';
 
 @freezed
-class ErrorDto with _$ErrorDto {
+abstract class ErrorDto with _$ErrorDto {
   const factory ErrorDto({
     String? code,
     String? description,
@@ -16,7 +16,7 @@ class ErrorDto with _$ErrorDto {
 }
 
 @freezed
-class AttributeDto with _$AttributeDto {
+abstract class AttributeDto with _$AttributeDto {
   const factory AttributeDto() = _AttributeDto;
 
   factory AttributeDto.fromJson(Map<String, dynamic> json) =>

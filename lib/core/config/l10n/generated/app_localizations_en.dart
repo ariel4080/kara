@@ -172,16 +172,20 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get label_screen_under_construction => 'This screen is under construction';
+  String get label_screen_under_construction =>
+      'This screen is under construction';
 
   @override
-  String get label_we_are_working => 'We are working hard to bring you this feature';
+  String get label_we_are_working =>
+      'We are working hard to bring you this feature';
 
   @override
-  String get label_you_have_no_appointments => 'You have no appointments registered yet!';
+  String get label_you_have_no_appointments =>
+      'You have no appointments registered yet!';
 
   @override
-  String get label_add_appointment => 'Tap the \'+\' button to add an appointment.';
+  String get label_add_appointment =>
+      'Tap the \'+\' button to add an appointment.';
 
   @override
   String get label_add_booking => 'Book your space';

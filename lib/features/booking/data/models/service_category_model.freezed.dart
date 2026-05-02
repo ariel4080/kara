@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,287 +9,287 @@ part of 'service_category_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ServiceCategoryModel _$ServiceCategoryModelFromJson(Map<String, dynamic> json) {
-  return _ServiceCategoryModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ServiceCategoryModel {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  int get duration => throw _privateConstructorUsedError;
-  double get price => throw _privateConstructorUsedError;
-  String get currency => throw _privateConstructorUsedError;
-  String get icon => throw _privateConstructorUsedError;
+
+ String get id; String get name; String? get description; int get duration; double get price; String get currency; String get icon;
+/// Create a copy of ServiceCategoryModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$ServiceCategoryModelCopyWith<ServiceCategoryModel> get copyWith => _$ServiceCategoryModelCopyWithImpl<ServiceCategoryModel>(this as ServiceCategoryModel, _$identity);
 
   /// Serializes this ServiceCategoryModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of ServiceCategoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ServiceCategoryModelCopyWith<ServiceCategoryModel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ServiceCategoryModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.price, price) || other.price == price)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.icon, icon) || other.icon == icon));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,description,duration,price,currency,icon);
+
+@override
+String toString() {
+  return 'ServiceCategoryModel(id: $id, name: $name, description: $description, duration: $duration, price: $price, currency: $currency, icon: $icon)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $ServiceCategoryModelCopyWith<$Res> {
-  factory $ServiceCategoryModelCopyWith(ServiceCategoryModel value,
-          $Res Function(ServiceCategoryModel) then) =
-      _$ServiceCategoryModelCopyWithImpl<$Res, ServiceCategoryModel>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? description,
-      int duration,
-      double price,
-      String currency,
-      String icon});
-}
+abstract mixin class $ServiceCategoryModelCopyWith<$Res>  {
+  factory $ServiceCategoryModelCopyWith(ServiceCategoryModel value, $Res Function(ServiceCategoryModel) _then) = _$ServiceCategoryModelCopyWithImpl;
+@useResult
+$Res call({
+ String id, String name, String? description, int duration, double price, String currency, String icon
+});
 
+
+
+
+}
 /// @nodoc
-class _$ServiceCategoryModelCopyWithImpl<$Res,
-        $Val extends ServiceCategoryModel>
+class _$ServiceCategoryModelCopyWithImpl<$Res>
     implements $ServiceCategoryModelCopyWith<$Res> {
-  _$ServiceCategoryModelCopyWithImpl(this._value, this._then);
+  _$ServiceCategoryModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ServiceCategoryModel _self;
+  final $Res Function(ServiceCategoryModel) _then;
 
-  /// Create a copy of ServiceCategoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? description = freezed,
-    Object? duration = null,
-    Object? price = null,
-    Object? currency = null,
-    Object? icon = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of ServiceCategoryModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? duration = null,Object? price = null,Object? currency = null,Object? icon = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as int,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
 }
 
-/// @nodoc
-abstract class _$$ServiceCategoryModelImplCopyWith<$Res>
-    implements $ServiceCategoryModelCopyWith<$Res> {
-  factory _$$ServiceCategoryModelImplCopyWith(_$ServiceCategoryModelImpl value,
-          $Res Function(_$ServiceCategoryModelImpl) then) =
-      __$$ServiceCategoryModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? description,
-      int duration,
-      double price,
-      String currency,
-      String icon});
 }
 
-/// @nodoc
-class __$$ServiceCategoryModelImplCopyWithImpl<$Res>
-    extends _$ServiceCategoryModelCopyWithImpl<$Res, _$ServiceCategoryModelImpl>
-    implements _$$ServiceCategoryModelImplCopyWith<$Res> {
-  __$$ServiceCategoryModelImplCopyWithImpl(_$ServiceCategoryModelImpl _value,
-      $Res Function(_$ServiceCategoryModelImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of ServiceCategoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? description = freezed,
-    Object? duration = null,
-    Object? price = null,
-    Object? currency = null,
-    Object? icon = null,
-  }) {
-    return _then(_$ServiceCategoryModelImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: null == price
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as double,
-      currency: null == currency
-          ? _value.currency
-          : currency // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+/// Adds pattern-matching-related methods to [ServiceCategoryModel].
+extension ServiceCategoryModelPatterns on ServiceCategoryModel {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ServiceCategoryModel value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _ServiceCategoryModel() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ServiceCategoryModel value)  $default,){
+final _that = this;
+switch (_that) {
+case _ServiceCategoryModel():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ServiceCategoryModel value)?  $default,){
+final _that = this;
+switch (_that) {
+case _ServiceCategoryModel() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  int duration,  double price,  String currency,  String icon)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _ServiceCategoryModel() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.duration,_that.price,_that.currency,_that.icon);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  int duration,  double price,  String currency,  String icon)  $default,) {final _that = this;
+switch (_that) {
+case _ServiceCategoryModel():
+return $default(_that.id,_that.name,_that.description,_that.duration,_that.price,_that.currency,_that.icon);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description,  int duration,  double price,  String currency,  String icon)?  $default,) {final _that = this;
+switch (_that) {
+case _ServiceCategoryModel() when $default != null:
+return $default(_that.id,_that.name,_that.description,_that.duration,_that.price,_that.currency,_that.icon);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ServiceCategoryModelImpl implements _ServiceCategoryModel {
-  const _$ServiceCategoryModelImpl(
-      {required this.id,
-      required this.name,
-      this.description,
-      required this.duration,
-      required this.price,
-      required this.currency,
-      required this.icon});
 
-  factory _$ServiceCategoryModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ServiceCategoryModelImplFromJson(json);
+class _ServiceCategoryModel implements ServiceCategoryModel {
+  const _ServiceCategoryModel({required this.id, required this.name, this.description, required this.duration, required this.price, required this.currency, required this.icon});
+  factory _ServiceCategoryModel.fromJson(Map<String, dynamic> json) => _$ServiceCategoryModelFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final String? description;
-  @override
-  final int duration;
-  @override
-  final double price;
-  @override
-  final String currency;
-  @override
-  final String icon;
+@override final  String id;
+@override final  String name;
+@override final  String? description;
+@override final  int duration;
+@override final  double price;
+@override final  String currency;
+@override final  String icon;
 
-  @override
-  String toString() {
-    return 'ServiceCategoryModel(id: $id, name: $name, description: $description, duration: $duration, price: $price, currency: $currency, icon: $icon)';
-  }
+/// Create a copy of ServiceCategoryModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$ServiceCategoryModelCopyWith<_ServiceCategoryModel> get copyWith => __$ServiceCategoryModelCopyWithImpl<_ServiceCategoryModel>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ServiceCategoryModelImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.duration, duration) ||
-                other.duration == duration) &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.currency, currency) ||
-                other.currency == currency) &&
-            (identical(other.icon, icon) || other.icon == icon));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, description, duration, price, currency, icon);
-
-  /// Create a copy of ServiceCategoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ServiceCategoryModelImplCopyWith<_$ServiceCategoryModelImpl>
-      get copyWith =>
-          __$$ServiceCategoryModelImplCopyWithImpl<_$ServiceCategoryModelImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ServiceCategoryModelImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$ServiceCategoryModelToJson(this, );
 }
 
-abstract class _ServiceCategoryModel implements ServiceCategoryModel {
-  const factory _ServiceCategoryModel(
-      {required final String id,
-      required final String name,
-      final String? description,
-      required final int duration,
-      required final double price,
-      required final String currency,
-      required final String icon}) = _$ServiceCategoryModelImpl;
-
-  factory _ServiceCategoryModel.fromJson(Map<String, dynamic> json) =
-      _$ServiceCategoryModelImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String? get description;
-  @override
-  int get duration;
-  @override
-  double get price;
-  @override
-  String get currency;
-  @override
-  String get icon;
-
-  /// Create a copy of ServiceCategoryModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ServiceCategoryModelImplCopyWith<_$ServiceCategoryModelImpl>
-      get copyWith => throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ServiceCategoryModel&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.duration, duration) || other.duration == duration)&&(identical(other.price, price) || other.price == price)&&(identical(other.currency, currency) || other.currency == currency)&&(identical(other.icon, icon) || other.icon == icon));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,description,duration,price,currency,icon);
+
+@override
+String toString() {
+  return 'ServiceCategoryModel(id: $id, name: $name, description: $description, duration: $duration, price: $price, currency: $currency, icon: $icon)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$ServiceCategoryModelCopyWith<$Res> implements $ServiceCategoryModelCopyWith<$Res> {
+  factory _$ServiceCategoryModelCopyWith(_ServiceCategoryModel value, $Res Function(_ServiceCategoryModel) _then) = __$ServiceCategoryModelCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String name, String? description, int duration, double price, String currency, String icon
+});
+
+
+
+
+}
+/// @nodoc
+class __$ServiceCategoryModelCopyWithImpl<$Res>
+    implements _$ServiceCategoryModelCopyWith<$Res> {
+  __$ServiceCategoryModelCopyWithImpl(this._self, this._then);
+
+  final _ServiceCategoryModel _self;
+  final $Res Function(_ServiceCategoryModel) _then;
+
+/// Create a copy of ServiceCategoryModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? duration = null,Object? price = null,Object? currency = null,Object? icon = null,}) {
+  return _then(_ServiceCategoryModel(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String?,duration: null == duration ? _self.duration : duration // ignore: cast_nullable_to_non_nullable
+as int,price: null == price ? _self.price : price // ignore: cast_nullable_to_non_nullable
+as double,currency: null == currency ? _self.currency : currency // ignore: cast_nullable_to_non_nullable
+as String,icon: null == icon ? _self.icon : icon // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

@@ -6,23 +6,52 @@ part of 'booking_datasource.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$bookingDatasourceHash() => r'04b7f92e9d441d78ab5cc81ed2fca0b3e2475862';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [bookingDatasource].
 @ProviderFor(bookingDatasource)
-final bookingDatasourceProvider =
-    AutoDisposeProvider<BookingDatasource>.internal(
-  bookingDatasource,
-  name: r'bookingDatasourceProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$bookingDatasourceHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final bookingDatasourceProvider = BookingDatasourceProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef BookingDatasourceRef = AutoDisposeProviderRef<BookingDatasource>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class BookingDatasourceProvider
+    extends
+        $FunctionalProvider<
+          BookingDatasource,
+          BookingDatasource,
+          BookingDatasource
+        >
+    with $Provider<BookingDatasource> {
+  BookingDatasourceProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'bookingDatasourceProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$bookingDatasourceHash();
+
+  @$internal
+  @override
+  $ProviderElement<BookingDatasource> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  BookingDatasource create(Ref ref) {
+    return bookingDatasource(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(BookingDatasource value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<BookingDatasource>(value),
+    );
+  }
+}
+
+String _$bookingDatasourceHash() => r'04b7f92e9d441d78ab5cc81ed2fca0b3e2475862';

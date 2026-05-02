@@ -172,16 +172,20 @@ class AppLocalizationsEs extends AppLocalizations {
   }
 
   @override
-  String get label_screen_under_construction => 'Esta pantalla está en construcción';
+  String get label_screen_under_construction =>
+      'Esta pantalla está en construcción';
 
   @override
-  String get label_we_are_working => 'Estamos trabajando arduamente para traerte esta función';
+  String get label_we_are_working =>
+      'Estamos trabajando arduamente para traerte esta función';
 
   @override
-  String get label_you_have_no_appointments => '¡Aún no tienes citas registradas!';
+  String get label_you_have_no_appointments =>
+      '¡Aún no tienes citas registradas!';
 
   @override
-  String get label_add_appointment => 'Haz tap en el botón de \'+\' para agregar una cita.';
+  String get label_add_appointment =>
+      'Haz tap en el botón de \'+\' para agregar una cita.';
 
   @override
   String get label_add_booking => 'Agenda tu espacio';

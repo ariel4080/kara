@@ -6,23 +6,46 @@ part of 'appointments_view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$getAppointmentsHash() => r'fd4f14999d5058a8c7158f3446ac9d4863f95dbc';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [getAppointments].
 @ProviderFor(getAppointments)
-final getAppointmentsProvider =
-    FutureProvider<List<AppointmentsEntity>>.internal(
-  getAppointments,
-  name: r'getAppointmentsProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$getAppointmentsHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final getAppointmentsProvider = GetAppointmentsProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GetAppointmentsRef = FutureProviderRef<List<AppointmentsEntity>>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class GetAppointmentsProvider
+    extends
+        $FunctionalProvider<
+          AsyncValue<List<AppointmentsEntity>>,
+          List<AppointmentsEntity>,
+          FutureOr<List<AppointmentsEntity>>
+        >
+    with
+        $FutureModifier<List<AppointmentsEntity>>,
+        $FutureProvider<List<AppointmentsEntity>> {
+  GetAppointmentsProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'getAppointmentsProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$getAppointmentsHash();
+
+  @$internal
+  @override
+  $FutureProviderElement<List<AppointmentsEntity>> $createElement(
+    $ProviderPointer pointer,
+  ) => $FutureProviderElement(pointer);
+
+  @override
+  FutureOr<List<AppointmentsEntity>> create(Ref ref) {
+    return getAppointments(ref);
+  }
+}
+
+String _$getAppointmentsHash() => r'fd4f14999d5058a8c7158f3446ac9d4863f95dbc';
