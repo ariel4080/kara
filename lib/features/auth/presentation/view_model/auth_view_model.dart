@@ -9,7 +9,7 @@ part 'auth_view_model.freezed.dart';
 part 'auth_view_model.g.dart';
 
 @freezed
-class AuthState with _$AuthState {
+abstract class AuthState with _$AuthState {
   const factory AuthState({
     @Default(false) bool isLoadingSignInWithPasword,
     @Default(false) bool isLoadingSignInWithGoogle,

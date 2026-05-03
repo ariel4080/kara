@@ -8,7 +8,7 @@ part 'booking_view_model.freezed.dart';
 part 'booking_view_model.g.dart';
 
 @freezed
-class BookingState with _$BookingState {
+abstract class BookingState with _$BookingState {
   const factory BookingState({
     @Default([]) List<ServiceCategoryEntity> categories,
     @Default([]) List<ServiceCategoryEntity> categoriesSelected,

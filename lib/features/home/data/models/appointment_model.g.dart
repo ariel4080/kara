@@ -6,9 +6,8 @@ part of 'appointment_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AppointmentModelImpl _$$AppointmentModelImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AppointmentModelImpl(
+_AppointmentModel _$AppointmentModelFromJson(Map<String, dynamic> json) =>
+    _AppointmentModel(
       id: json['id'] as String,
       userId: json['userId'] as String,
       businessId: json['businessId'] as String,
@@ -21,8 +20,7 @@ _$AppointmentModelImpl _$$AppointmentModelImplFromJson(
       notes: json['notes'] as String?,
     );
 
-Map<String, dynamic> _$$AppointmentModelImplToJson(
-        _$AppointmentModelImpl instance) =>
+Map<String, dynamic> _$AppointmentModelToJson(_AppointmentModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'userId': instance.userId,
@@ -36,8 +34,8 @@ Map<String, dynamic> _$$AppointmentModelImplToJson(
       'notes': instance.notes,
     };
 
-_$ServiceModelImpl _$$ServiceModelImplFromJson(Map<String, dynamic> json) =>
-    _$ServiceModelImpl(
+_ServiceModel _$ServiceModelFromJson(Map<String, dynamic> json) =>
+    _ServiceModel(
       id: json['id'] as String,
       name: json['name'] as String,
       price: (json['price'] as num).toDouble(),
@@ -45,7 +43,7 @@ _$ServiceModelImpl _$$ServiceModelImplFromJson(Map<String, dynamic> json) =>
       icon: json['icon'] as String,
     );
 
-Map<String, dynamic> _$$ServiceModelImplToJson(_$ServiceModelImpl instance) =>
+Map<String, dynamic> _$ServiceModelToJson(_ServiceModel instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

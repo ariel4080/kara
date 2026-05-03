@@ -6,21 +6,49 @@ part of 'booking_view_model.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(BookingViewModel)
+final bookingViewModelProvider = BookingViewModelProvider._();
+
+final class BookingViewModelProvider
+    extends $AsyncNotifierProvider<BookingViewModel, BookingState> {
+  BookingViewModelProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'bookingViewModelProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$bookingViewModelHash();
+
+  @$internal
+  @override
+  BookingViewModel create() => BookingViewModel();
+}
+
 String _$bookingViewModelHash() => r'd3d031e6e7223d6433b19be78e497bb853f8e499';
 
-/// See also [BookingViewModel].
-@ProviderFor(BookingViewModel)
-final bookingViewModelProvider =
-    AsyncNotifierProvider<BookingViewModel, BookingState>.internal(
-  BookingViewModel.new,
-  name: r'bookingViewModelProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$bookingViewModelHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _$BookingViewModel = AsyncNotifier<BookingState>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+abstract class _$BookingViewModel extends $AsyncNotifier<BookingState> {
+  FutureOr<BookingState> build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final ref = this.ref as $Ref<AsyncValue<BookingState>, BookingState>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<BookingState>, BookingState>,
+              AsyncValue<BookingState>,
+              Object?,
+              Object?
+            >;
+    element.handleCreate(ref, build);
+  }
+}

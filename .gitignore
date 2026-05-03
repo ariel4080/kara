@@ -1,55 +1,22 @@
 # Flutter/Dart/Pub
 .dart_tool/
-.packages
-.pub-cache/
 build/
-flutter_*.png
-generated_plugin_registrant.dart
-
-# IntelliJ / VS Code
-.idea/
-.vscode/
-*.iml
+pubspec.lock
+.env
 
 # iOS
-ios/Flutter
-ios/Flutter/Flutter.framework
-ios/Flutter/Flutter.podspec
-ios/Flutter/Debug.xcconfig
-ios/Flutter/Release.xcconfig
-ios/.symlinks/
-ios/Pods/
 ios/Runner.xcworkspace/
-ios/build/
-ios/DerivedData/
+ios/Runner/GoogleService-Info.plist
+ios/Runner/Info.plist
 
 # Android
-android/.gradle/
-android/captures/
 android/gradle/
-android/build/
-*.apk
-*.ap_
-
-# Xcode
-*.xcworkspace
-*.xcuserstate
-*.xcodeproj/project.xcworkspace/
-*.xcodeproj/xcuserdata/
+android/.idea
+android/app/google-services.json
 
 # Macos
-macos/Flutter/GeneratedPluginRegistrant.swift
 macos/Podfile
-macos/Flutter/Flutter-Debug.xcconfig
-macos/Flutter/Flutter-Release.xcconfig
 
 # Others
-*.log
-*.tmp
-*.swp
 *.DS_Store
-.idea/
-/ios
-*.xcconfig
-.flutter-plugins
 .flutter-plugins-dependencies
